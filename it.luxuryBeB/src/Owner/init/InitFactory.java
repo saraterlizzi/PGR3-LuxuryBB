@@ -10,7 +10,6 @@ public class InitFactory implements AbstractFactory {
     @Override
     public Form createForm(String type) {
         return switch (type){
-             case "viewbookedrooms" -> new BookedForm();
              case "insertroom" -> new InsertRoomForm();
              default -> null;
         };
