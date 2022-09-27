@@ -48,6 +48,17 @@ public class RegistrationForm implements Form {
 
     @Override
     public void insertForm(JFrame finestra) {
-
+        finestra.add(email);
+        finestra.add(password);
+        finestra.add(conferma);
+        finestra.add(nome);
+        finestra.add(cognome);
+        finestra.add(codicefiscale);
+        finestra.add(em);
+        finestra.add(ps);
+        finestra.add(cnf);
+        finestra.add(nom);
+        finestra.add(cgn);
+        finestra.add(cf);
     }
 }

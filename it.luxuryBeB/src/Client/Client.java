@@ -10,12 +10,20 @@ public class Client {
     public static void main(String[] args) {
         JFrame finestra = new JFrame("Luxury B&B");
         AbstractFactory AF = FactoryMaker.getInstance().getFactory("auth");
-        Form login = AF.createForm("login");
+
+       /* Form login = AF.createForm("login");
         login.createForm();
         login.insertForm(finestra);
         Button registration = AF.createButton("registration");
         registration.createButton();
+
         registration.insertButton(finestra);
+          */
+
+
+        Form Regi = AF.createForm("Registration");
+        Regi.createForm();
+        Regi.insertForm(finestra);
         finestra.setSize(800, 740);
         finestra.setLayout(null);
         finestra.addWindowListener(new java.awt.event.WindowAdapter() {
