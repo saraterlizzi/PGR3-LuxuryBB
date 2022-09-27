@@ -5,11 +5,9 @@ import Client.Interface.Template.Form;
 import javax.swing.*;
 
 public class LoginForm implements Form {
-
     private static JTextField email=null;
     private static JPasswordField password=null;
     private JButton login=null;
-
     private JLabel em, ps, lg= null;
 
     @Override
