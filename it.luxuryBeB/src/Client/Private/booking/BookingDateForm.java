@@ -17,8 +17,8 @@ public class BookingDateForm implements Form {
 
     @Override
     public void createForm() {
-        datainizio = new JTextField("dd/mm/yy");
-        datafine = new JTextField("dd/mm/yy");
+        datainizio = new JTextField();
+        datafine = new JTextField();
         prenotazione = new JButton("Prenota");
         in = new JLabel("Data inizio:");
         fin = new JLabel("Data fine:");
@@ -26,7 +26,7 @@ public class BookingDateForm implements Form {
 
         datainizio.setBounds(50, 100, 200, 30);
         datafine.setBounds(50, 160, 200, 30);
-        prenotazione.setBounds(50, 220, 200, 30);
+        prenotazione.setBounds(50, 200, 200, 30);
         in.setBounds(50, 70, 240, 30);
         fin.setBounds(50, 130, 240, 30);
         pren.setBounds(50, 40, 230, 30);

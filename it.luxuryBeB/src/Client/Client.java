@@ -9,21 +9,30 @@ import javax.swing.*;
 public class Client {
     public static void main(String[] args) {
         JFrame finestra = new JFrame("Luxury B&B");
-        AbstractFactory AF = FactoryMaker.getInstance().getFactory("auth");
+        //AbstractFactory AF = FactoryMaker.getInstance().getFactory("auth");
+
+        /* AbstractFactory PF = FactoryMaker.getInstance().getFactory("private");
+        Form booking = PF.createForm("booking");
+        booking.createForm();
+        booking.insertForm(finestra); */
+
+        AbstractFactory PF = FactoryMaker.getInstance().getFactory("private");
+        Form payment = PF.createForm("payment");
+        payment.createForm();
+        payment.insertForm(finestra);
 
        /* Form login = AF.createForm("login");
         login.createForm();
         login.insertForm(finestra);
         Button registration = AF.createButton("registration");
         registration.createButton();
-
-        registration.insertButton(finestra);
-          */
+        registration.insertButton(finestra); */
 
 
-        Form Regi = AF.createForm("Registration");
+        /* Form regi = AF.createForm("registration");
         Regi.createForm();
-        Regi.insertForm(finestra);
+        Regi.insertForm(finestra); */
+
         finestra.setSize(800, 740);
         finestra.setLayout(null);
         finestra.addWindowListener(new java.awt.event.WindowAdapter() {
