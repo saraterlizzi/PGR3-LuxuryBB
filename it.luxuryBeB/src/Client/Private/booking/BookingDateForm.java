@@ -29,7 +29,7 @@ public class BookingDateForm implements Form {
         prenotazione.setBounds(50, 220, 200, 30);
         in.setBounds(50, 70, 240, 30);
         fin.setBounds(50, 130, 240, 30);
-        pren.setBounds(50, 190, 230, 30);
+        pren.setBounds(50, 40, 230, 30);
     }
 
     @Override
