@@ -15,7 +15,7 @@ public class AuthenticationFactory implements AbstractFactory {
         return switch (type)
                 {
                     case "login" -> new LoginForm();
-                    case "Registration" -> new RegistrationForm();
+                    case "registration" -> new RegistrationForm();
                     default -> null;
                 };
     }
