@@ -1,6 +1,7 @@
 package Client;
 
 import Client.Interface.AbstractFactory;
+import Client.Interface.Template.Button;
 import Client.Interface.Template.Form;
 
 import javax.swing.*;
@@ -12,6 +13,7 @@ public class Client {
         Form login = AF.createForm("login");
         login.createForm();
         login.insertForm(finestra);
+        Button registration = AF.createButton("registration");
         finestra.setSize(500, 540);
         finestra.addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
