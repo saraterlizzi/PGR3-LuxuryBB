@@ -23,10 +23,10 @@ public class AuthenticationFactory implements AbstractFactory {
     @Override
     public Button createButton(String type) {
         return switch (type)
-                {
-                    case "registration" -> new RegistrationButton();
-                    default -> null;
-                };
+        {
+            case "registration" -> new RegistrationButton();
+            default -> null;
+        };
     }
 
     @Override

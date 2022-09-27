@@ -11,7 +11,7 @@ public class RegistrationButton implements Button {
     @Override
     public void createButton() {
         registration = new JButton("Registrati");
-        registration.setBounds(20, 400, 230, 30);
+        registration.setBounds(50, 240, 200, 30);
     }
 
     @Override

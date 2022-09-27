@@ -23,10 +23,10 @@ public class LoginForm implements Form {
 
         email.setBounds(50, 100, 200, 30);
         password.setBounds(50, 160, 200, 30);
-        login.setBounds(50, 220, 200, 30);
+        login.setBounds(50, 200, 200, 30);
         em.setBounds(50, 70, 240, 30);
         ps.setBounds(50, 130, 240, 30);
-        lg.setBounds(50, 400, 230, 30);
+        lg.setBounds(50, 40, 230, 30);
     }
 
     @Override

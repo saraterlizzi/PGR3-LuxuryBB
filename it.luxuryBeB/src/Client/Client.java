@@ -14,7 +14,10 @@ public class Client {
         login.createForm();
         login.insertForm(finestra);
         Button registration = AF.createButton("registration");
-        finestra.setSize(500, 540);
+        registration.createButton();
+        registration.insertButton(finestra);
+        finestra.setSize(800, 740);
+        finestra.setLayout(null);
         finestra.addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
             public void windowClosing(java.awt.event.WindowEvent windowEvent) {
