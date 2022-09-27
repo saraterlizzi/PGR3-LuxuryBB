@@ -1,7 +1,6 @@
 package Client.Authentication;
 
 import Client.Authentication.Login.LoginForm;
-import Client.Authentication.Login.RegistrationButton;
 import Client.Interface.AbstractFactory;
 import Client.Interface.Template.Button;
 import Client.Interface.Template.Form;
@@ -20,11 +19,7 @@ public class AuthenticationFactory implements AbstractFactory {
 
     @Override
     public Button createButton(String type) {
-        return switch (type)
-        {
-            case "registration" -> new RegistrationButton();
-            default -> null;
-        };
+        return null;
     }
 
     @Override
