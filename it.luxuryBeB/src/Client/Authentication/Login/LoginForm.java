@@ -19,7 +19,7 @@ public class LoginForm implements Form {
         login = new JButton("Login");
         em = new JLabel("E-mail:");
         ps = new JLabel("Password:");
-        lg = new JLabel("Luxury B&B");
+        lg = new JLabel("Area Login");
 
         email.setBounds(50, 100, 200, 30);
         password.setBounds(50, 160, 200, 30);
