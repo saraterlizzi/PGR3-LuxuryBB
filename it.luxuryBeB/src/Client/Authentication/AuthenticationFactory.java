@@ -1,6 +1,7 @@
 package Client.Authentication;
 
 import Client.Authentication.Login.LoginForm;
+import Client.Authentication.Registration.RegistrationForm;
 import Client.Interface.AbstractFactory;
 import Client.Interface.Template.Button;
 import Client.Interface.Template.Form;
@@ -13,6 +14,7 @@ public class AuthenticationFactory implements AbstractFactory {
         return switch (type)
                 {
                     case "login" -> new LoginForm();
+                    case "Registration" -> new RegistrationForm();
                     default -> null;
                 };
     }
