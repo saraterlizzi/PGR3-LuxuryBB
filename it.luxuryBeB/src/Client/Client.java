@@ -8,8 +8,8 @@ import javax.swing.*;
 
 public class Client {
     public static void main(String[] args) {
+        ClientVisitor CV = ClientVisitor.getInstance();
 
-
-
+        CV.VisitAuthentication("login");
     }
 }
