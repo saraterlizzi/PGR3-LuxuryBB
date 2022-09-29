@@ -12,4 +12,6 @@ public interface SocketProxy {
     abstract void close();
     public Socket getSocket();
     public void connectionSetup(String IP, int porta);
+
+    public void end();
 }

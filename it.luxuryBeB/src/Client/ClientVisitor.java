@@ -2,6 +2,7 @@ package Client;
 
 import Client.Authentication.AuthenticationFacade;
 import Client.Interface.Memento;
+import Client.Interface.SocketProxy;
 import Client.Interface.Visitor;
 import Client.Private.PrivateFacade;
 
@@ -31,6 +32,17 @@ public class ClientVisitor implements Visitor {
             case "init" -> F.PrivateInt();
             case "booking" -> F.Booking();
             case "payment" -> F.Payment();
+        };
+    }
+
+    public void VisitProxy(String where){
+        switch (where){
+            case "start" -> {
+                SocketProxy.getInstance().connectionSetup("localhost", 58);
+            }
+            case "end" -> {
+                SocketProxy.getInstance().end();
+            }
         };
     }
 }
