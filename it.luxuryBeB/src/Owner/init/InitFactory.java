@@ -4,6 +4,7 @@ import Owner.Interface.AbstractFactory;
 import Owner.Interface.Template.Button;
 import Owner.Interface.Template.Form;
 import Owner.Interface.Template.Text;
+import Owner.Room.InsertRoomForm;
 
 public class InitFactory implements AbstractFactory {
 
