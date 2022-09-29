@@ -1,5 +1,6 @@
 package Client.Private.booking;
 
+import Client.Authentication.AuthenticationConcreteHandler;
 import Client.Interface.Template.Form;
 
 import javax.swing.*;
@@ -30,6 +31,13 @@ public class BookingDateForm implements Form {
         in.setBounds(50, 70, 240, 30);
         fin.setBounds(50, 130, 240, 30);
         pren.setBounds(50, 40, 230, 30);
+
+        prenotazione.setActionCommand("Private-Form-Booking");
+        prenotazione.addActionListener(AuthenticationConcreteHandler.getInstance());
+    }
+
+    public static void comunicate(){
+
     }
 
     @Override

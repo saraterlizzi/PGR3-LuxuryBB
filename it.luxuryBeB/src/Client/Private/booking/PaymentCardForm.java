@@ -1,6 +1,8 @@
 package Client.Private.booking;
 
+import Client.Authentication.AuthenticationConcreteHandler;
 import Client.Interface.Template.Form;
+import Client.Private.PrivateConcreteHandler;
 
 import javax.swing.*;
 
@@ -35,6 +37,13 @@ public class PaymentCardForm implements Form {
         scad.setBounds(50,190,240,30);
         cvv.setBounds(160,190,240,30);
         pag.setBounds(50,40, 230, 30 );
+
+        pagamento.setActionCommand("Private-Form-Payment");
+        pagamento.addActionListener(PrivateConcreteHandler.getInstance());
+    }
+
+    public static void comunicate(){
+
     }
 
     @Override

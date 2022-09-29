@@ -3,7 +3,6 @@ package Server;
 import java.io.IOException;
 
 public class Server {
-
     public static void main (String [] args) {
 
         Proxy server = ServerProxy.getInstance();
@@ -16,6 +15,7 @@ public class Server {
                     public void run() {
                         super.run();
                         server.setIO();
+                        String text = server.read();
                     }
                 };
             }

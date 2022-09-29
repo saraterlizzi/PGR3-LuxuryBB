@@ -1,5 +1,6 @@
 package Client.Authentication.Registration;
 
+import Client.Authentication.AuthenticationConcreteHandler;
 import Client.Interface.Template.Form;
 
 import javax.swing.*;
@@ -42,6 +43,13 @@ public class RegistrationForm implements Form {
         cgn.setBounds(50,250,240,30);
         cf.setBounds(50,310,240,30);
         rg.setBounds(50, 40, 240, 30);
+
+        conferma.setActionCommand("Authentication-Form-Registration");
+        conferma.addActionListener(AuthenticationConcreteHandler.getInstance());
+    }
+
+    public static void comunicate(){
+
     }
 
     @Override

@@ -1,6 +1,8 @@
 package Client.Authentication.Login;
 
+import Client.Authentication.AuthenticationConcreteHandler;
 import Client.Interface.Template.Form;
+import Client.Private.PrivateConcreteHandler;
 
 import javax.swing.*;
 
@@ -25,6 +27,13 @@ public class LoginForm implements Form {
         em.setBounds(50, 70, 240, 30);
         ps.setBounds(50, 130, 240, 30);
         lg.setBounds(50, 40, 230, 30);
+
+        login.setActionCommand("Authentication-Form-Login");
+        login.addActionListener(PrivateConcreteHandler.getInstance());
+    }
+
+    public static void comunicate(){
+
     }
 
     @Override

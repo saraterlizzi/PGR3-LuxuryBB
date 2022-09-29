@@ -11,5 +11,8 @@ public class Client {
         ClientVisitor CV = ClientVisitor.getInstance();
 
         CV.VisitAuthentication("login");
+
+
+
     }
 }
