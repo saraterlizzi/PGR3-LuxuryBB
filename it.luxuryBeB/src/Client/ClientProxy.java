@@ -17,9 +17,9 @@ public class ClientProxy implements SocketProxy {
     private DataInputStream dis = null;
 
     private PrintWriter pw = null;
-    private static SocketProxy instance = null;
+    private static ClientProxy instance = null;
 
-    public static SocketProxy getInstance(){
+    public static ClientProxy getInstance(){
         if (instance==null){
             instance=new ClientProxy();
         }

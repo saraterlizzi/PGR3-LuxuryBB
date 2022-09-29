@@ -36,12 +36,13 @@ public class ClientVisitor implements Visitor {
     }
 
     public void VisitProxy(String where){
+        SocketProxy P = ClientProxy.getInstance();
         switch (where){
             case "start" -> {
-                SocketProxy.getInstance().connectionSetup("localhost", 58);
+                P.connectionSetup("localhost", 58);
             }
             case "end" -> {
-                SocketProxy.getInstance().end();
+               P.end();
             }
         };
     }
