@@ -19,10 +19,9 @@ public class ClientVisitor implements Visitor {
     public void VisitAuthentication(String where) {
         AuthenticationFacade F=AuthenticationFacade.getInstance();
         switch(where){
-            case"login" -> F.login();
-            case"register" -> F.register();
-        }
-
+            case "login" -> F.login();
+            case "register" -> F.register();
+        };
     }
 
     @Override
@@ -30,8 +29,8 @@ public class ClientVisitor implements Visitor {
         PrivateFacade F = PrivateFacade.getInstance();
         switch(where) {
             case "init" -> F.PrivateInt();
-            case "Booking" -> F.Booking();
-            case "Payment" -> F.Payment();
-        }
+            case "booking" -> F.Booking();
+            case "payment" -> F.Payment();
+        };
     }
 }
