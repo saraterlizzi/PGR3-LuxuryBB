@@ -28,7 +28,7 @@ public class OwnerVisitor implements Visitor {
         Frame.setMemento();
         JFrame finestra = Frame.restoreState();
 
-
+        finestra.setVisible(true);
     }
 
     @Override
@@ -42,6 +42,7 @@ public class OwnerVisitor implements Visitor {
         insert.createForm();
         insert.insertForm(finestra);
 
+        finestra.setVisible(true);
     }
 
     @Override
@@ -57,6 +58,8 @@ public class OwnerVisitor implements Visitor {
         insert.createButton();
         booked.insertButton(finestra);
         insert.insertButton(finestra);
+
+        finestra.setVisible(true);
     }
 
     public void VisitProxy(String where){

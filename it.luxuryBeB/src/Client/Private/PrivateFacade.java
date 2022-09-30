@@ -30,6 +30,8 @@ public class PrivateFacade {
         booking.insertButton(finestra);
         recap.createButton();
         recap.insertButton(finestra);
+
+        finestra.setVisible(true);
     }
     public void Booking(){
         AbstractFactory PF = FactoryMaker.getInstance().getFactory("private");
@@ -40,6 +42,8 @@ public class PrivateFacade {
         Form booking = PF.createForm("booking");
         booking.createForm();
         booking.insertForm(finestra);
+
+        finestra.setVisible(true);
 
     }
     public void Payment(){
@@ -52,6 +56,7 @@ public class PrivateFacade {
         payment.createForm();
         payment.insertForm(finestra);
 
+        finestra.setVisible(true);
     }
 
 }

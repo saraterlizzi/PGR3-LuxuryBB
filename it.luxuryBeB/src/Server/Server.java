@@ -1,11 +1,18 @@
 package Server;
 
+import Server.Interface.DBBridge;
 import Server.Interface.Proxy;
 
 import java.io.IOException;
 
 public class Server {
     public static void main (String [] args) {
+
+        DBBridge db = Database.getInstance();
+
+        db.connect();
+
+        System.out.println("Avviamento completato del server, in attesa di connessione.");
 
         Proxy server = ServerProxy.getInstance();
         try {

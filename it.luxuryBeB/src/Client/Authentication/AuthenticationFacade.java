@@ -34,6 +34,8 @@ public class AuthenticationFacade {
         Button registration = AF.createButton("registration");
         registration.createButton();
         registration.insertButton(finestra);
+
+        finestra.setVisible(true);
     }
     public void register(){
         AbstractFactory AF = FactoryMaker.getInstance().getFactory("auth");
@@ -44,6 +46,8 @@ public class AuthenticationFacade {
         Form regi = AF.createForm("registration");
         regi.createForm();
         regi.insertForm(finestra);
+
+        finestra.setVisible(true);
     }
 
 }
