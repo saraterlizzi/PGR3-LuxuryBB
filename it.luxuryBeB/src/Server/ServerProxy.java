@@ -1,10 +1,12 @@
 package Server;
 
+import Server.Interface.Proxy;
+
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class ServerProxy implements Proxy{
+public class ServerProxy implements Proxy {
 
     private Socket socket = null;
     private ServerSocket serverSocket = null;

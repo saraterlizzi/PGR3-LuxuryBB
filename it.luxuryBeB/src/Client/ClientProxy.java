@@ -1,8 +1,6 @@
 package Client;
 
 import Client.Interface.SocketProxy;
-import Server.Proxy;
-import Server.ServerProxy;
 
 import javax.swing.*;
 import java.io.DataInputStream;

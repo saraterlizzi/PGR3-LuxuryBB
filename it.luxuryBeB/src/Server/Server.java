@@ -1,5 +1,7 @@
 package Server;
 
+import Server.Interface.Proxy;
+
 import java.io.IOException;
 
 public class Server {
