@@ -1,6 +1,8 @@
 package Owner;
 
+
 import Owner.Interface.AbstractFactory;
+import Owner.Interface.SocketProxy;
 import Owner.Interface.Template.Button;
 import Owner.Interface.Template.Form;
 import Owner.Interface.Visitor;
@@ -55,6 +57,17 @@ public class OwnerVisitor implements Visitor {
         insert.createButton();
         booked.insertButton(finestra);
         insert.insertButton(finestra);
+    }
 
+    public void VisitProxy(String where){
+        SocketProxy P = OwnerProxy.getInstance();
+        switch (where){
+            case "start" -> {
+                P.connectionSetup("localhost", 58);
+            }
+            case "end" -> {
+                P.end();
+            }
+        };
     }
 }

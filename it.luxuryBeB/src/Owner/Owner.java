@@ -6,6 +6,8 @@ public class Owner {
     public static void main (String[] args){
         OwnerVisitor OV = OwnerVisitor.getInstance();
 
+        OV.VisitProxy("start");
+
         OV.VisitInit();
     }
-    }
+}

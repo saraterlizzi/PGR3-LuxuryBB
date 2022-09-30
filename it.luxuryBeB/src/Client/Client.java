@@ -13,10 +13,5 @@ public class Client {
         CV.VisitProxy("start");
 
         CV.VisitAuthentication("login");
-
-
-
-
-
     }
 }
