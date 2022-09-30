@@ -18,7 +18,6 @@ public class RegistrationButton implements Button {
         registration.addActionListener(AuthenticationConcreteHandler.getInstance());
     }
 
-
     @Override
     public void insertButton(JFrame finestra) {
         finestra.add(registration);

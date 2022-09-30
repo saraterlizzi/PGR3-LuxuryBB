@@ -1,6 +1,7 @@
 package Owner.Room;
 
 import Owner.Interface.Template.Form;
+import Owner.OwnerConcreteHandler;
 
 import javax.swing.*;
 
@@ -14,6 +15,9 @@ public class InsertRoomForm implements Form {
     private JButton inserimento = null;
 
     private JLabel num, tip, prz, pst, ins = null;
+
+    public static void comunicate() {
+    }
 
 
     @Override
@@ -39,7 +43,9 @@ public class InsertRoomForm implements Form {
        prz.setBounds(50, 100, 200, 30);
        pst.setBounds(50, 100, 200, 30);
        ins.setBounds(50, 100, 200, 30);
-
+       
+       inserimento.setActionCommand("Owner-Form-Insert");
+       inserimento.addActionListener(OwnerConcreteHandler.getInstance());
     }
 
     @Override
@@ -54,7 +60,5 @@ public class InsertRoomForm implements Form {
         finestra.add(prz);
         finestra.add(pst);
         finestra.add(ins);
-
-
     }
 }

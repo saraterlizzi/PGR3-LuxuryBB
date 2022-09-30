@@ -1,6 +1,7 @@
 package Owner.init;
 
 import Owner.Interface.Template.Button;
+import Owner.OwnerConcreteHandler;
 
 import javax.swing.*;
 
@@ -12,6 +13,8 @@ public class InsertRoomButton implements Button {
         room = new JButton("Aggiornamento camere");
         room.setBounds(50, 240, 200, 30);
 
+        room.setActionCommand("Owner-Button-Insert");
+        room.addActionListener(OwnerConcreteHandler.getInstance());
     }
 
     @Override
