@@ -31,7 +31,7 @@ public class AuthenticationConcreteHandler extends ActionHandler {
                 }
             } else if ((e.getActionCommand().contains("Button"))) {
                 if(e.getActionCommand().contains("Registration")){
-                   Client.ClientVisitor.getInstance().VisitAuthentication("registration");
+                   Client.ClientVisitor.getInstance().VisitAuthentication("register");
                 }
             }
         } else {
