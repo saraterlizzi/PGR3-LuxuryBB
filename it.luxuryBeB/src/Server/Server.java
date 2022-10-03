@@ -1,6 +1,7 @@
 package Server;
 
 import Server.Handler.Request;
+import Server.HandlingSystem.HandlerAuth;
 import Server.Interface.DBBridge;
 import Server.Interface.Proxy;
 import Server.Query.Query;
@@ -53,6 +54,8 @@ public class Server {
                         query.setTable(table);
 
                         Request richiesta = new Request(sottosistema, oggetto, query);
+
+                        server.write(HandlerAuth.getInstance().handlerRequest(richiesta));
                     }
                 };
                 t.start();
