@@ -16,7 +16,9 @@ public class FrameMemento implements Memento {
     }
 
     public void  setMemento(){
-        this.Frame=new JFrame("Luxury B&B");
+        if (this.Frame==null){
+            this.Frame=new JFrame("Luxury B&B");
+        }
         this.Frame.setSize(800, 740);
         this.Frame.setLayout(null);
         this.Frame.addWindowListener(new java.awt.event.WindowAdapter() {

@@ -31,31 +31,33 @@ public class Server {
                     @Override
                     public void run() {
                         server.setIO();
-                        String text = server.read();
-                        System.out.println(text);
-                        if(text.isEmpty()||text.equalsIgnoreCase("quit")){
-                            System.out.println("Thread"+Thread.currentThread().getName()+"terminato");
-                            return;
+                        while (true) {
+                            String text = server.read();
+                            System.out.println(text);
+                            if (text.isEmpty() || text.equalsIgnoreCase("quit")) {
+                                System.out.println("Thread" + Thread.currentThread().getName() + "terminato");
+                                return;
+                            }
+                            QueryAdapter adapter = new QueryAdapter();
+                            List<String> list = Arrays.asList(text.split(","));
+                            ArrayList<String> request = new ArrayList<>(list);
+
+                            String sottosistema = request.get(0);
+                            request.remove(0);
+
+                            String oggetto = request.get(0);
+                            request.remove(0);
+
+                            String table = request.get(0);
+                            request.remove(0);
+
+                            Query query = adapter.adapter(request);
+                            query.setTable(table);
+
+                            Request richiesta = new Request(sottosistema, oggetto, query);
+
+                            server.write(HandlerAuth.getInstance().handlerRequest(richiesta));
                         }
-                        QueryAdapter adapter = new QueryAdapter();
-                        List<String> list = Arrays.asList(text.split(","));
-                        ArrayList<String> request = new ArrayList<>(list);
-
-                        String sottosistema = request.get(0);
-                        request.remove(0);
-
-                        String oggetto = request.get(0);
-                        request.remove(0);
-
-                        String table = request.get(0);
-                        request.remove(0);
-
-                        Query query = adapter.adapter(request);
-                        query.setTable(table);
-
-                        Request richiesta = new Request(sottosistema, oggetto, query);
-
-                        server.write(HandlerAuth.getInstance().handlerRequest(richiesta));
                     }
                 };
                 t.start();

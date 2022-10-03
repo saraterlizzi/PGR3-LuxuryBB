@@ -53,20 +53,24 @@ public class RegistrationForm implements Form {
     public static void comunicate(){
         String ml = "email,"+email.getText();
         String user = ml+",password,"+new String(password.getPassword());
-        String information = ",nome,"+nome.getText()+",cognome,"+cognome.getText()+",codicefiscale,"+codicefiscale.getText()+","+ml;
+        String information = "nome,"+nome.getText()+",cognome,"+cognome.getText()+",codicefiscale,"+codicefiscale.getText()+","+ml;
         ClientProxy server = ClientProxy.getInstance();
 
         server.write("AUTHENTICATION,REGISTRATION,user,"+user);
         String risultato = server.read();
+        System.out.println(risultato);
         if(risultato.equals("True")){
-            server.write("AUTHENTICATION,REGISTRATION,user_information,"+information);
-            risultato = server.read();
-            if(risultato.equals("True")){
+            server.write("AUTHENTICATION,REGISTRATION,user_informations,"+information);
+            String secondo = server.read();
+            System.out.println(secondo);
+            if(secondo.equals("True")){
+                System.out.println("ind a fess e mammt");
                 ClientVisitor.getInstance().VisitPrivate("init");
             }
+        } else{
+            JOptionPane.showMessageDialog(new JFrame(), "error, registrazione fallita","attenzione",JOptionPane.WARNING_MESSAGE);
+            ClientVisitor.getInstance().VisitAuthentication("login");
         }
-        JOptionPane.showMessageDialog(new JFrame(), "error, registrazione fallita","attenzione",JOptionPane.WARNING_MESSAGE);
-        ClientVisitor.getInstance().VisitAuthentication("login");
     }
 
     @Override
