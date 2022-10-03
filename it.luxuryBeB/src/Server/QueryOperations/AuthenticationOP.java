@@ -28,7 +28,30 @@ public class AuthenticationOP implements Operations {
 
     @Override
     public String add(String table, Query query) {
-        return null;
+        Connection db = Database.getInstance().getConnection();
+        try {
+            Statement statement = db.createStatement();
+            if(research(table, query, statement)){
+                return "False";
+            }
+            StringBuilder insert = new StringBuilder("insert into "+table+"values (");
+            for (int i=0; i<query.getValori().size(); i++){
+                insert.append("'"+query.getValori().get(i)+"'");
+                if(i<query.getValori().size()-1){
+                    insert.append(",");
+                }
+            }
+            statement.executeUpdate(insert.toString());
+            return "True";
+        } catch (SQLException e) {
+            try {
+                Statement statement = db.createStatement();
+                statement.executeUpdate("DELETE FROM "+table+" where "+query.getAttributi().get(0)+" = "+query.getValori().get(0));
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            }
+        }
+        return "False";
     }
 
     @Override

@@ -2,6 +2,7 @@ package Client.Authentication.Login;
 
 import Client.Authentication.AuthenticationConcreteHandler;
 import Client.ClientProxy;
+import Client.ClientVisitor;
 import Client.Interface.Template.Form;
 import Client.Private.PrivateConcreteHandler;
 
@@ -64,6 +65,13 @@ public class LoginForm implements Form {
         StringBuilder serverrequest = new StringBuilder("AUTHENTICATION,LOGIN,user,email,"+mail+",password,"+passw);
         ClientProxy server = ClientProxy.getInstance();
         server.write(serverrequest.toString());
+
+        String risultato = server.read();
+        if(risultato.equals("True")){
+            ClientVisitor.getInstance().VisitPrivate("init");
+        } else{
+            JOptionPane.showMessageDialog(new JFrame(), "error, login fallito","attenzione",JOptionPane.WARNING_MESSAGE);
+        }
     }
 
 

@@ -1,6 +1,8 @@
 package Client.Authentication.Registration;
 
 import Client.Authentication.AuthenticationConcreteHandler;
+import Client.ClientProxy;
+import Client.ClientVisitor;
 import Client.Interface.Template.Form;
 
 import javax.swing.*;
@@ -49,7 +51,22 @@ public class RegistrationForm implements Form {
     }
 
     public static void comunicate(){
+        String ml = "email,"+email.getText();
+        String user = ml+",password,"+new String(password.getPassword());
+        String information = ",nome,"+nome.getText()+",cognome,"+cognome.getText()+",codicefiscale,"+codicefiscale.getText()+","+ml;
+        ClientProxy server = ClientProxy.getInstance();
 
+        server.write("AUTHENTICATION,REGISTRATION,user,"+user);
+        String risultato = server.read();
+        if(risultato.equals("True")){
+            server.write("AUTHENTICATION,REGISTRATION,user_information,"+information);
+            risultato = server.read();
+            if(risultato.equals("True")){
+                ClientVisitor.getInstance().VisitPrivate("init");
+            }
+        }
+        JOptionPane.showMessageDialog(new JFrame(), "error, registrazione fallita","attenzione",JOptionPane.WARNING_MESSAGE);
+        ClientVisitor.getInstance().VisitAuthentication("login");
     }
 
     @Override

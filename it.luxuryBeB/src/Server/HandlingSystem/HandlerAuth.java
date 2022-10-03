@@ -23,6 +23,9 @@ public class HandlerAuth extends Handler {
                 case "LOGIN":
                     req = adb.get(request.getQuery().getTable(), request.getQuery());
                     break;
+                case "REGISTRATION":
+                    req= adb.add(request.getQuery().getTable(), request.getQuery());
+                    break;
             };
         }
         return req;
