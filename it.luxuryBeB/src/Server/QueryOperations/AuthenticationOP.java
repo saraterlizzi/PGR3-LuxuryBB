@@ -48,7 +48,13 @@ public class AuthenticationOP implements Operations {
         } catch (SQLException e) {
             try {
                 Statement statement = db.createStatement();
-                statement.executeUpdate("DELETE FROM "+table+" where "+query.getValori().get(0)+" = "+query.getAttributi().get(0));
+                if(research(table,query,statement)){
+                    if(table.equals("user_informations")){
+                        statement.executeUpdate("DELETE FROM user where email='"+query.getValori().get(3)+"'");
+                    }
+                    statement.executeUpdate("DELETE FROM "+table+" where "+query.getAttributi().get(0)+" = '"+query.getValori().get(0)+"'");
+                }
+
             } catch (SQLException ex) {
                 throw new RuntimeException(ex);
             }
