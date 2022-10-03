@@ -1,6 +1,7 @@
 package Client.Authentication.Login;
 
 import Client.Authentication.AuthenticationConcreteHandler;
+import Client.ClientProxy;
 import Client.Interface.Template.Form;
 import Client.Private.PrivateConcreteHandler;
 
@@ -29,11 +30,22 @@ public class LoginForm implements Form {
         lg.setBounds(50, 40, 230, 30);
 
         login.setActionCommand("Authentication-Form-Login");
-        login.addActionListener(PrivateConcreteHandler.getInstance());
+        login.addActionListener(AuthenticationConcreteHandler.getInstance());
     }
 
     public static void comunicate(){
-
+        System.out.println("PIPPO");
+        String mail = email.getText();
+        String passw = new String(password.getPassword());
+        if (mail.equals("")){
+            mail="null";
+        }
+        if(passw.equals("")){
+            passw="null";
+        }
+        StringBuilder serverrequest = new StringBuilder("AUTHENTICATION,LOGIN,user,email,"+mail+",password,"+passw);
+        ClientProxy server = ClientProxy.getInstance();
+        server.write(serverrequest.toString());
     }
 
     @Override

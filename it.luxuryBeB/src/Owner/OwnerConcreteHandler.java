@@ -10,9 +10,9 @@ import Owner.init.InsertRoomButton;
 import java.awt.event.ActionEvent;
 
 public class OwnerConcreteHandler extends ActionHandler {
-    private static Owner.Interface.Handler.ActionHandler instance = null;
+    private static ActionHandler instance = null;
 
-    public static Owner.Interface.Handler.ActionHandler getInstance(){
+    public static ActionHandler getInstance(){
         if (instance==null)
         {
             instance=new OwnerConcreteHandler();
