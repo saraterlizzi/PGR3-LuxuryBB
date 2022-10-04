@@ -15,11 +15,30 @@ public class OwnerOP implements Operations {
         Connection db = Database.getInstance().getConnection();
         try {
             Statement statement = db.createStatement();
-            if (research(table, query, statement)){
-                return "True";
-            } else{
-                return "False";
+            StringBuilder q = new StringBuilder();
+            if(table.equals("Room")){
+                q.append("select * from "+table);
+            } else {
+                q.append("select * from " + table + " where ");
+                for (int i = 0; i < query.getAttributi().size(); i++) {
+                    q.append(query.getValori().get(i));
+                    q.append(" = '");
+                    q.append(query.getAttributi().get(i));
+                    q.append("' ");
+                    if (i != query.getAttributi().size() - 1) {
+                        q.append("and ");
+                    }
+                }
             }
+            StringBuilder list = new StringBuilder();
+            ResultSet result = statement.executeQuery(String.valueOf(q));
+            while(result.next()){
+                list.append(result.getString(1));
+                if(!result.isLast()){
+                    list.append(",");
+                }
+            }
+            return list.toString();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
