@@ -22,6 +22,10 @@ public class HandlerOwner extends Handler {
             switch (request.getRichiesta()){
                 case "INSERTROOM":
                     req = oop.add(request.getQuery().getTable(),request.getQuery());
+                    break;
+                case "ROOM":
+                    req = oop.get(request.getQuery().getTable(),request.getQuery());
+                    break;
             }
         } else {
             return successor.handlerRequest(request);

@@ -33,9 +33,9 @@ public class OwnerOP implements Operations {
             StringBuilder list = new StringBuilder();
             ResultSet result = statement.executeQuery(String.valueOf(q));
             while(result.next()){
-                list.append(result.getString(1));
+                list.append(result.getString(1)+","+result.getString(2)+","+result.getString(3)+","+result.getString(4)+","+result.getString(5));
                 if(!result.isLast()){
-                    list.append(",");
+                    list.append("-");
                 }
             }
             return list.toString();
