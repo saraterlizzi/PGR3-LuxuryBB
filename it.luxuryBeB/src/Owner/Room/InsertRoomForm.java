@@ -19,7 +19,7 @@ public class InsertRoomForm implements Form {
     private JLabel num, tip, prz, pst, ins = null;
 
     public static void comunicate() {
-        String richiesta = "OWNER,INSERTROOM,Room,tipologia,"+tipologia.getText()+",posti,"+posti.getText()+",numero,"+numero.getText()+",prezzo,"+prezzo.getText()+",stato,true";
+        String richiesta = "OWNER,INSERTROOM,Room,tipologia,"+tipologia.getText()+",posti,"+posti.getText()+",numero,"+numero.getText()+",prezzo,"+prezzo.getText()+",stato,1";
         OwnerProxy server = OwnerProxy.getInstance();
         server.write(richiesta);
         if(server.read().equals("True")){

@@ -30,7 +30,7 @@ public class OwnerConcreteHandler extends ActionHandler {
                     OwnerVisitor.getInstance().VisitCheck();
                 }
             } else if (e.getActionCommand().contains("Form")) {
-                if(e.getActionCommand().contains("Booked")){
+                if(e.getActionCommand().contains("Insert")){
                     InsertRoomForm.comunicate();
                 }
             }

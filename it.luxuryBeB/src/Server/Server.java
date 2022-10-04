@@ -2,6 +2,7 @@ package Server;
 
 import Server.Handler.Request;
 import Server.HandlingSystem.HandlerAuth;
+import Server.HandlingSystem.HandlerOwner;
 import Server.Interface.DBBridge;
 import Server.Interface.Proxy;
 import Server.Query.Query;
@@ -25,6 +26,7 @@ public class Server {
         try {
             server.init(58);
             System.out.println("Server inizializzato, in attesa di connessioni.");
+            HandlerAuth.getInstance().setSuccessor(HandlerOwner.getInstance());
             while (true){
                 server.accept();
                 Thread t = new Thread(){
