@@ -1,7 +1,6 @@
 package Client;
 
 import Client.Authentication.AuthenticationFacade;
-import Client.Interface.Memento;
 import Client.Interface.SocketProxy;
 import Client.Interface.Visitor;
 import Client.Private.PrivateFacade;

@@ -64,11 +64,11 @@ public class RegistrationForm implements Form {
             String secondo = server.read();
             System.out.println(secondo);
             if(secondo.equals("True")){
-                System.out.println("ind a fess e mammt");
-                ClientVisitor.getInstance().VisitPrivate("init");
+                ClientVisitor.getInstance().VisitAuthentication("login");
+                JOptionPane.showMessageDialog(new JFrame(), "Registrazione effettuata con successo.","Operazione effettuata", JOptionPane.INFORMATION_MESSAGE);
             }
         } else{
-            JOptionPane.showMessageDialog(new JFrame(), "error, registrazione fallita","attenzione",JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(new JFrame(), "Error, registrazione fallita.","ATTENZIONE",JOptionPane.WARNING_MESSAGE);
             ClientVisitor.getInstance().VisitAuthentication("login");
         }
     }

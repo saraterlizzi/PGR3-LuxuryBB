@@ -71,5 +71,6 @@ public class ClientProxy implements SocketProxy {
     public void end() {
         pw.println("exit");
         pw.flush();
+        close();
     }
 }
