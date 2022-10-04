@@ -69,5 +69,6 @@ public class OwnerProxy implements SocketProxy {
     public void end() {
         pw.println("exit");
         pw.flush();
+        close();
     }
 }
