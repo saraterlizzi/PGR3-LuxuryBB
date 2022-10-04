@@ -27,7 +27,7 @@ public class HandlerAuth extends Handler {
                     req= adb.add(request.getQuery().getTable(), request.getQuery());
                     break;
             };
-        }
+        } else  return successor.handlerRequest(request);
         return req;
     }
 }

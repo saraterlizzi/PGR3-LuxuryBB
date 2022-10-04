@@ -11,7 +11,7 @@ public class InsertRoomButton implements Button {
     @Override
     public void createButton() {
         room = new JButton("Aggiornamento camere");
-        room.setBounds(50, 240, 200, 30);
+        room.setBounds(50, 200, 200, 30);
 
         room.setActionCommand("Owner-Button-Insert");
         room.addActionListener(OwnerConcreteHandler.getInstance());

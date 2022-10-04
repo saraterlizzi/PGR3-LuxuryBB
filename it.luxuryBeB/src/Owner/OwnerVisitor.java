@@ -28,6 +28,9 @@ public class OwnerVisitor implements Visitor {
         Frame.setMemento();
         JFrame finestra = Frame.restoreState();
 
+        finestra.getContentPane().removeAll();
+        finestra.repaint();
+
         finestra.setVisible(true);
     }
 
@@ -37,6 +40,9 @@ public class OwnerVisitor implements Visitor {
         FrameMemento Frame=FrameMemento.getInstance();
         Frame.setMemento();
         JFrame finestra = Frame.restoreState();
+
+        finestra.getContentPane().removeAll();
+        finestra.repaint();
 
         Form insert = IF.createForm("insertroom");
         insert.createForm();
@@ -51,6 +57,9 @@ public class OwnerVisitor implements Visitor {
         FrameMemento Frame=FrameMemento.getInstance();
         Frame.setMemento();
         JFrame finestra = Frame.restoreState();
+
+        finestra.getContentPane().removeAll();
+        finestra.repaint();
 
         Button booked = IF.createButton("viewbookedrooms");
         Button insert = IF.createButton("insertroom");

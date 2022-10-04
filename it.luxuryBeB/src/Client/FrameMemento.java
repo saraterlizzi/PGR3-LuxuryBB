@@ -34,6 +34,7 @@ public class FrameMemento implements Memento {
 
     public JFrame restoreState(){
         this.Frame.getContentPane().removeAll();
+        this.Frame.repaint();
         return this.Frame;
     }
 }

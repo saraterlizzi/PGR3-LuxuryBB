@@ -24,12 +24,12 @@ public class OwnerConcreteHandler extends ActionHandler {
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().contains("Owner")){
             if(e.getActionCommand().contains("Button")){
-                if ((e.getActionCommand().contains("Insert"))){
+                if (e.getActionCommand().contains("Insert")){
                     OwnerVisitor.getInstance().VisitInsert();
                 } else if (e.getActionCommand().contains("Booked")) {
                     OwnerVisitor.getInstance().VisitCheck();
                 }
-            } else if ((e.getActionCommand().contains("Form"))) {
+            } else if (e.getActionCommand().contains("Form")) {
                 if(e.getActionCommand().contains("Booked")){
                     InsertRoomForm.comunicate();
                 }
