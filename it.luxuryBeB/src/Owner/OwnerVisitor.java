@@ -1,6 +1,7 @@
 package Owner;
 
 
+import Client.Interface.Handler.ActionHandler;
 import Owner.Interface.AbstractFactory;
 import Owner.Interface.SocketProxy;
 import Owner.Interface.Template.Button;
@@ -9,6 +10,7 @@ import Owner.Interface.Visitor;
 import Server.Database;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
 import java.util.List;
 
 public class OwnerVisitor implements Visitor {
@@ -201,6 +203,9 @@ public class OwnerVisitor implements Visitor {
                 JLabel tipologia = new JLabel(real_rooms[0]);
                 JLabel stato = new JLabel(real_rooms[4]);
 
+                JButton modifica = new JButton("Modifica Stato");
+
+
                 JLabel num = new JLabel("Numero camera:");
                 JLabel tip = new JLabel("Tipologia camera:");
                 JLabel sta = new JLabel("Stato:");
@@ -208,6 +213,8 @@ public class OwnerVisitor implements Visitor {
                 numero.setBounds(300, 100+(50*i),100,30);
                 tipologia.setBounds(450, 100+(50*i),100,30);
                 stato.setBounds(600,100+(50*i),100,30);
+
+                modifica.setBounds( 650, 100+(50*i),100,30);
 
                 num.setBounds(300, 50+(50*i),100,30);
                 tip.setBounds(450, 50+(50*i),100,30);
@@ -220,6 +227,24 @@ public class OwnerVisitor implements Visitor {
                 finestra.add(num);
                 finestra.add(tip);
                 finestra.add(sta);
+
+                finestra.add(modifica);
+
+                modifica.addActionListener(new ActionHandler() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        String state = null;
+                        if (real_rooms[4].equals("1")){
+                            state="0";
+                        } else state = "1";
+                        OwnerProxy.getInstance().write("OWNER,MODIFY,Room,stato,"+state+",numero,"+real_rooms[2]);
+                        if (OwnerProxy.getInstance().read().equals("True")){
+                            OwnerVisitor.getInstance().VisitModify();
+                        } else {
+                            JOptionPane.showMessageDialog(new JFrame(), "Error, inserimento fallito.","ATTENZIONE",JOptionPane.WARNING_MESSAGE);
+                        }
+                    }
+                });
             }
         }
         finestra.repaint();

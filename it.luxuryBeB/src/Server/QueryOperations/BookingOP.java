@@ -69,17 +69,7 @@ public class BookingOP implements Operations {
 
     @Override
     public String modify(String table, Query query) {
-        Connection db = Database.getInstance().getConnection();
-        Statement statement = null;
-        try {
-            statement = db.createStatement();
-            StringBuilder q = new StringBuilder();
-            q.append("UPDATE "+table+" set "+query.getAttributi().get(0)+" = "+query.getValori().get(0)+" where "+query.getAttributi().get(1)+" = "+query.getValori().get(1));
-            statement.executeUpdate(q.toString());
-            return "True";
-        } catch (SQLException e) {
-            return "False";
-        }
+       return null;
     }
 
     @Override
