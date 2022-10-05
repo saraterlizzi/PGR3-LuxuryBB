@@ -83,18 +83,35 @@ public class OwnerVisitor implements Visitor {
                 JLabel prezzo = new JLabel(real_rooms[3]);
                 JLabel stato = new JLabel(real_rooms[4]);
 
-                numero.setBounds(50, 100+(50*i),100,30);
-                tipologia.setBounds(150, 100+(50*i),100,30);
-                posti.setBounds(250,100+(50*i), 100, 30);
-                prezzo.setBounds(300, 100+(50*i), 100, 30);
-                stato.setBounds(350,100+(50*i),100,30);
+                JLabel num = new JLabel("Numero camera:");
+                JLabel tip = new JLabel("Tipologia camera:");
+                JLabel pst = new JLabel("Posti letto:");
+                JLabel prz = new JLabel("Prezzo:");
+                JLabel sta = new JLabel("Stato:");
 
+                numero.setBounds(300, 100+(50*i),100,30);
+                tipologia.setBounds(450, 100+(50*i),100,30);
+                posti.setBounds(600,100+(50*i), 100, 30);
+                prezzo.setBounds(750, 100+(50*i), 100, 30);
+                stato.setBounds(900,100+(50*i),100,30);
+
+                num.setBounds(300, 50+(50*i),100,30);
+                tip.setBounds(450, 50+(50*i),100,30);
+                pst.setBounds(600,50+(50*i), 100, 30);
+                prz.setBounds(750, 50+(50*i), 100, 30);
+                sta.setBounds(900,50+(50*i),100,30);
 
                 finestra.add(numero);
                 finestra.add(tipologia);
                 finestra.add(posti);
                 finestra.add(prezzo);
                 finestra.add(stato);
+
+                finestra.add(num);
+                finestra.add(tip);
+                finestra.add(pst);
+                finestra.add(prz);
+                finestra.add(sta);
             }
         }
         finestra.repaint();

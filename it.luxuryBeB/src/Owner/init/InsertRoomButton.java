@@ -8,10 +8,15 @@ import javax.swing.*;
 public class InsertRoomButton implements Button {
     private JButton room = null;
 
+    private JLabel area = null;
+
     @Override
     public void createButton() {
         room = new JButton("Aggiornamento camere");
+        area = new JLabel("AREA PROPRIETARIO");
+
         room.setBounds(50, 200, 200, 30);
+        area.setBounds(92, 160, 200, 30);
 
         room.setActionCommand("Owner-Button-Insert");
         room.addActionListener(OwnerConcreteHandler.getInstance());
@@ -20,6 +25,6 @@ public class InsertRoomButton implements Button {
     @Override
     public void insertButton(JFrame finestra) {
             finestra.add(room);
-
+            finestra.add(area);
     }
 }
