@@ -19,14 +19,11 @@ public class HandlerAuth extends Handler {
         AuthenticationOP adb = new AuthenticationOP();
         String req = null;
         if (request.getSottosistema().equals("AUTHENTICATION")){
-            switch (request.getRichiesta()){
-                case "LOGIN":
-                    req = adb.get(request.getQuery().getTable(), request.getQuery());
-                    break;
-                case "REGISTRATION":
-                    req= adb.add(request.getQuery().getTable(), request.getQuery());
-                    break;
-            };
+            switch (request.getRichiesta()) {
+                case "LOGIN" -> req = adb.get(request.getQuery().getTable(), request.getQuery());
+                case "REGISTRATION" -> req = adb.add(request.getQuery().getTable(), request.getQuery());
+            }
+            ;
         } else  return successor.handlerRequest(request);
         return req;
     }

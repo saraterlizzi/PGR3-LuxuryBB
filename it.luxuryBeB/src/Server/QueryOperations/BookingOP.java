@@ -45,13 +45,12 @@ public class BookingOP implements Operations {
             }
             StringBuilder insert = new StringBuilder("insert into "+table+" values (");
             for (int i=0; i<query.getValori().size(); i++){
-                insert.append("'"+query.getAttributi().get(i)+"'");
+                insert.append("'").append(query.getAttributi().get(i)).append("'");
                 if(i<query.getValori().size()-1){
                     insert.append(",");
                 }
             }
             insert.append(")");
-            System.out.println(insert.toString());
             statement.executeUpdate(insert.toString());
             return "True";
         } catch (SQLException e) {

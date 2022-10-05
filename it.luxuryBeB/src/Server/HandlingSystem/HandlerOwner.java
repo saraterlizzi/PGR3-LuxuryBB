@@ -19,13 +19,9 @@ public class HandlerOwner extends Handler {
         OwnerOP oop = new OwnerOP();
         String req = null;
         if(request.getSottosistema().equals("OWNER")){
-            switch (request.getRichiesta()){
-                case "INSERTROOM":
-                    req = oop.add(request.getQuery().getTable(),request.getQuery());
-                    break;
-                case "ROOM":
-                    req = oop.get(request.getQuery().getTable(),request.getQuery());
-                    break;
+            switch (request.getRichiesta()) {
+                case "INSERTROOM" -> req = oop.add(request.getQuery().getTable(), request.getQuery());
+                case "ROOM" -> req = oop.get(request.getQuery().getTable(), request.getQuery());
             }
         } else {
             return successor.handlerRequest(request);
