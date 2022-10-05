@@ -22,6 +22,7 @@ public class InitFactory implements AbstractFactory {
             case "viewbookedrooms" -> new BookedButton();
             case "insertroom" -> new InsertRoomButton();
             case "back" -> new ReturnButton();
+            case "modify" -> new ModifyStateButton();
             default -> null;
         };
     }

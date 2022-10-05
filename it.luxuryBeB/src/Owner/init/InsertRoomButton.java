@@ -12,7 +12,7 @@ public class InsertRoomButton implements Button {
 
     @Override
     public void createButton() {
-        room = new JButton("Aggiornamento camere");
+        room = new JButton("Aggiungi camere");
         area = new JLabel("AREA PROPRIETARIO");
 
         room.setBounds(50, 200, 200, 30);

@@ -120,10 +120,13 @@ public class OwnerVisitor implements Visitor {
 
         Button booked = IF.createButton("viewbookedrooms");
         Button insert = IF.createButton("insertroom");
+        Button modify = IF.createButton("modify");
         booked.createButton();
+        modify.createButton();
         insert.createButton();
         booked.insertButton(finestra);
         insert.insertButton(finestra);
+        modify.insertButton(finestra);
 
         OwnerProxy.getInstance().write("OWNER,ROOM,Room");
         String rooms = OwnerProxy.getInstance().read();
@@ -171,6 +174,11 @@ public class OwnerVisitor implements Visitor {
         }
         finestra.repaint();
         finestra.setVisible(true);
+    }
+
+    @Override
+    public void VisitModify() {
+
     }
 
     public void VisitProxy(String where){
