@@ -178,7 +178,52 @@ public class OwnerVisitor implements Visitor {
 
     @Override
     public void VisitModify() {
+        AbstractFactory IF = FactoryMaker.getInstance().getFactory("init");
+        FrameMemento Frame=FrameMemento.getInstance();
+        Frame.setMemento();
+        JFrame finestra = Frame.restoreState();
 
+        finestra.getContentPane().removeAll();
+        finestra.repaint();
+
+        Button returnb = IF.createButton("back");
+        returnb.createButton();
+        returnb.insertButton(finestra);
+
+        OwnerProxy.getInstance().write("OWNER,ROOM,Room");
+        String rooms = OwnerProxy.getInstance().read();
+        if(!rooms.isEmpty()){
+            List<String> label = List.of(rooms.split("-"));
+            for (int i=0; i<label.size(); i++){
+                String[] real_rooms = label.get(i).split(",");
+
+                JLabel numero = new JLabel(real_rooms[2]);
+                JLabel tipologia = new JLabel(real_rooms[0]);
+                JLabel stato = new JLabel(real_rooms[4]);
+
+                JLabel num = new JLabel("Numero camera:");
+                JLabel tip = new JLabel("Tipologia camera:");
+                JLabel sta = new JLabel("Stato:");
+
+                numero.setBounds(300, 100+(50*i),100,30);
+                tipologia.setBounds(450, 100+(50*i),100,30);
+                stato.setBounds(500,100+(50*i),100,30);
+
+                num.setBounds(300, 50+(50*i),100,30);
+                tip.setBounds(450, 50+(50*i),100,30);
+                sta.setBounds(500,50+(50*i),100,30);
+
+                finestra.add(numero);
+                finestra.add(tipologia);
+                finestra.add(stato);
+
+                finestra.add(num);
+                finestra.add(tip);
+                finestra.add(sta);
+            }
+        }
+        finestra.repaint();
+        finestra.setVisible(true);
     }
 
     public void VisitProxy(String where){
