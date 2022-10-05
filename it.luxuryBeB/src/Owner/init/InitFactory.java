@@ -21,6 +21,7 @@ public class InitFactory implements AbstractFactory {
         return switch (type){
             case "viewbookedrooms" -> new BookedButton();
             case "insertroom" -> new InsertRoomButton();
+            case "back" -> new ReturnButton();
             default -> null;
         };
     }

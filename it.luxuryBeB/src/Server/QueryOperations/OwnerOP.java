@@ -16,20 +16,8 @@ public class OwnerOP implements Operations {
         try {
             Statement statement = db.createStatement();
             StringBuilder q = new StringBuilder();
-            if(table.equals("Room")){
-                q.append("select * from "+table);
-            } else {
-                q.append("select * from " + table + " where ");
-                for (int i = 0; i < query.getAttributi().size(); i++) {
-                    q.append(query.getValori().get(i));
-                    q.append(" = '");
-                    q.append(query.getAttributi().get(i));
-                    q.append("' ");
-                    if (i != query.getAttributi().size() - 1) {
-                        q.append("and ");
-                    }
-                }
-            }
+            q.append("select * from "+table);
+
             StringBuilder list = new StringBuilder();
             ResultSet result = statement.executeQuery(String.valueOf(q));
             while(result.next()){

@@ -28,6 +28,8 @@ public class OwnerConcreteHandler extends ActionHandler {
                     OwnerVisitor.getInstance().VisitInsert();
                 } else if (e.getActionCommand().contains("Booked")) {
                     OwnerVisitor.getInstance().VisitCheck();
+                } else if (e.getActionCommand().contains("Back")) {
+                    OwnerVisitor.getInstance().VisitInit();
                 }
             } else if (e.getActionCommand().contains("Form")) {
                 if(e.getActionCommand().contains("Insert")){
