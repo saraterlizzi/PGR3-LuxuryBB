@@ -72,7 +72,8 @@ public class OwnerOP implements Operations {
         try {
             statement = db.createStatement();
             StringBuilder q = new StringBuilder();
-            q.append("UPDATE "+table+" set "+query.getAttributi().get(0)+" = "+query.getValori().get(0)+" where "+query.getAttributi().get(1)+" = "+query.getValori().get(1));
+            q.append("UPDATE "+table+" set "+query.getValori().get(0)+" = "+query.getAttributi().get(0)+" where "+query.getValori().get(1)+" = "+query.getAttributi().get(1));
+            System.out.println(q.toString());
             statement.executeUpdate(q.toString());
             return "True";
         } catch (SQLException e) {

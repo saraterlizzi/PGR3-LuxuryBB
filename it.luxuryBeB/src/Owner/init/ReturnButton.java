@@ -11,7 +11,7 @@ public class ReturnButton implements Button {
 
     @Override
     public void createButton() {
-        returnb.setBounds(50, 15, 200, 30);
+        returnb.setBounds(50, 45, 200, 30);
 
         returnb.setActionCommand("Owner-Button-Back");
         returnb.addActionListener(OwnerConcreteHandler.getInstance());
