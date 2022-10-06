@@ -3,10 +3,10 @@ package Client.Authentication;
 import Client.Interface.Memento;
 
 public class UserMemento implements Memento {
-   private static Memento instance;
+   private static UserMemento instance;
    private String email, password, id=null;
 
-   public static Memento getInstance(){
+   public static UserMemento getInstance(){
        if (instance==null){
            instance=new UserMemento();
        }
@@ -19,7 +19,7 @@ public class UserMemento implements Memento {
         this.id=id;
     }
     public String restoreState(){
-        return null;
+        return email;
     }
 
 

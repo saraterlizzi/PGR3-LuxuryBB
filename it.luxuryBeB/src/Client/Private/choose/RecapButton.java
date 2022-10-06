@@ -1,6 +1,7 @@
 package Client.Private.choose;
 
 import Client.Interface.Template.Button;
+import Client.Private.PrivateConcreteHandler;
 
 import javax.swing.*;
 
@@ -11,6 +12,9 @@ public class RecapButton implements Button {
     public void createButton() {
         recap = new JButton("Riepilogo");
         recap.setBounds(50, 240, 200, 30);
+
+        recap.setActionCommand("Private-Button-View");
+        recap.addActionListener(PrivateConcreteHandler.getInstance());
     }
 
     @Override

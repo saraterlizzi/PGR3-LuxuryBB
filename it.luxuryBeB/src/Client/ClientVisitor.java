@@ -31,6 +31,7 @@ public class ClientVisitor implements Visitor {
             case "init" -> F.PrivateInt();
             case "booking" -> F.Booking();
             case "payment" -> F.Payment();
+            case "view" -> F.ViewB();
         };
     }
 

@@ -1,6 +1,7 @@
 package Client.Authentication.Login;
 
 import Client.Authentication.AuthenticationConcreteHandler;
+import Client.Authentication.UserMemento;
 import Client.ClientProxy;
 import Client.ClientVisitor;
 import Client.Interface.Template.Form;
@@ -68,6 +69,7 @@ public class LoginForm implements Form {
 
         String risultato = server.read();
         if(risultato.equals("True")){
+            UserMemento.getInstance().setMemento(mail,passw,null);
             ClientVisitor.getInstance().VisitPrivate("init");
         } else{
             JOptionPane.showMessageDialog(new JFrame(), "error, login fallito","attenzione",JOptionPane.WARNING_MESSAGE);
