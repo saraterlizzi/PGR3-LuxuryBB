@@ -13,7 +13,6 @@ import java.net.Socket;
  * @author Filomena De Rosa, Sara Terlizzi
  * @see SocketProxy
   */
-
 public class ClientProxy implements SocketProxy {
 
     /** Attributo per la connessione mediante socket

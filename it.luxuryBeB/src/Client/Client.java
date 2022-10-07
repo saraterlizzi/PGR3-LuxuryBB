@@ -14,7 +14,6 @@ public class Client {
      @param args valori presi tramite linea di comando
      @return nessuno poichè void
      */
-
     public static void main(String[] args) {
         ClientVisitor CV = ClientVisitor.getInstance();
 

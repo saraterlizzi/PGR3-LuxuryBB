@@ -1,6 +1,7 @@
 package Server.QueryOperations;
 
 import Server.Database;
+import Server.Handler.Handler;
 import Server.Query.Operations;
 import Server.Query.Query;
 
@@ -9,8 +10,18 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/**
+ * Classe che estende Operations per la gestione delle operazioni sul database, sottoparte Authentication
+ * @author Filomena De Rosa, Sara Terlizzi
+ * @see Operations
+ */
 public class AuthenticationOP implements Operations {
 
+    /** Metodo per prendere esito dal database
+     * @param table (tabella di riferimento)
+     * @param query (query di riferimento)
+     * @return l'esito della query
+     */
     @Override
     public String get(String table, Query query) {
         Connection db = Database.getInstance().getConnection();
@@ -26,6 +37,11 @@ public class AuthenticationOP implements Operations {
         }
     }
 
+    /** Metodo per prendere aggiungere dati al database
+     * @param table (tabella di riferimento)
+     * @param query (query di riferimento)
+     * @return l'esito dell' aggiunta
+     */
     @Override
     public String add(String table, Query query) {
         Connection db = Database.getInstance().getConnection();
@@ -62,11 +78,21 @@ public class AuthenticationOP implements Operations {
         return "False";
     }
 
+    /** Metodo per modificare dati dal database
+     * @param table (tabella di riferimento)
+     * @param query (query di riferimento)
+     * @return l'esito della modifica
+     */
     @Override
     public String modify(String table, Query query) {
         return null;
     }
 
+    /** Metodo per ricercare query nel database
+     * @param table (tabella di riferimento)
+     * @param query (query di riferimento)
+     * @return l'esito della ricerca
+     */
     @Override
     public boolean research(String table, Query query, Statement statement) {
         StringBuilder q = new StringBuilder();

@@ -1,5 +1,7 @@
 package Server;
 
+import Client.ClientProxy;
+import Client.ClientVisitor;
 import Server.Handler.Request;
 import Server.HandlingSystem.HandlerAuth;
 import Server.HandlingSystem.HandlerBooking;
@@ -14,7 +16,18 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Classe main del package Server
+ * @author Filomena De Rosa, Sara Terlizzi
+ * @see Database
+ * @see ServerProxy
+ */
 public class Server {
+    /**
+     Metodo main dell'intero package Server
+     @param args valori presi tramite linea di comando
+     @return nessuno poichè void
+     */
     public static void main (String [] args) {
 
         DBBridge db = Database.getInstance();
