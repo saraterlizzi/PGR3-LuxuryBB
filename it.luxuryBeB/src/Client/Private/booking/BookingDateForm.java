@@ -16,24 +16,38 @@ import java.awt.event.ActionEvent;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
+/** Classe per la creazione del form inerente alla prenotazione
+ * @author Filomena De Rosa, Sara Terlizzi
+ * @see Form
+ */
 public class BookingDateForm implements Form {
-
-
+    /** Attributo statico per il form di inserimento della data di inizio
+     */
     private JDatePicker datainizio = null;
 
+    /** Attributo statico per il JFrame della finestra
+     */
     private static JFrame finestra = null;
 
+    /** Attributo statico per il form di inserimento della data di fine
+     */
     private JDatePicker datafine = null;
 
+    /** Attributo per il bottone di prenotazione
+     */
     private JButton prenotazione = null;
 
+    /** Attributi per le etichette poste sopra i form di inserimento
+     */
     private JLabel in, fin = null;
 
+    /** Attributi per i form di inserimento delle date
+     */
     private static  UtilDateModel inizio, fine = null;
 
-
-
-
+    /** Metodo per istanziare e settare le dimensioni/posizioni del form
+     @return nulla poichè void
+     */
     @Override
     public void createForm() {
         inizio = new UtilDateModel();
@@ -56,8 +70,11 @@ public class BookingDateForm implements Form {
         prenotazione.addActionListener(PrivateConcreteHandler.getInstance());
     }
 
-    public static void comunicate(){
 
+    /** Metodo per la comunicazione dei dati immessi al database
+     @return nulla poichè void
+     */
+    public static void comunicate(){
        String di = inizio.getYear()+"-"+(inizio.getMonth()+1)+"-"+inizio.getDay();
        String du = fine.getYear()+"-"+(fine.getMonth()+1)+"-"+ fine.getDay();
 
@@ -80,7 +97,6 @@ public class BookingDateForm implements Form {
                 JLabel pst = new JLabel("Posti letto:");
                 JLabel prz = new JLabel("Prezzo:");
 
-
                 numero.setBounds(50, 200+(100*i),100,30);
                 tipologia.setBounds(150, 200+(100*i),100,30);
                 posti.setBounds(270,200+(100*i), 100, 30);
@@ -99,7 +115,6 @@ public class BookingDateForm implements Form {
                         ClientVisitor.getInstance().VisitPrivate("payment");
                     }
                 });
-
                 finestra.add(numero);
                 finestra.add(tipologia);
                 finestra.add(posti);
@@ -110,13 +125,14 @@ public class BookingDateForm implements Form {
                 finestra.add(tip);
                 finestra.add(pst);
                 finestra.add(prz);
-
             }
         }
         finestra.repaint();
-
     }
 
+    /** Metodo per inserimento del form all'interno del frame
+     * @param finestra (visualizzata)
+     */
     @Override
     public void insertForm(JFrame finestra) {
         BookingDateForm.finestra =finestra;

@@ -9,7 +9,6 @@ import javax.swing.*;
  * @author Filomena De Rosa, Sara Terlizzi
  * @see Button
  */
-
 public class ReturnButton implements Button {
     /** Attributo per il bottone per tornare indietro
      */

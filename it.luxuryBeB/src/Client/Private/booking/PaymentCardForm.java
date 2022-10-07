@@ -9,14 +9,38 @@ import Client.Private.RoomMemento;
 
 import javax.swing.*;
 
+/** Classe per la creazione del form inerente alla prenotazione
+ * @author Filomena De Rosa, Sara Terlizzi
+ * @see Form
+ */
 public class PaymentCardForm implements Form {
+    /** Attributo statico per il form di inserimento dell'intestatario
+     */
     private static JTextField intestatario = null;
+
+    /** Attributo statico per il form di inserimento del numero della carta
+     */
     private static JTextField numerocarta = null;
+
+    /** Attributo statico per il form di inserimento della scadenza della carta
+     */
     private static JTextField scadenza = null;
+
+    /** Attributo statico per il form di inserimento del codice a tre cifre della carta
+     */
     private static JTextField codicesegreto = null;
+
+    /** Attributo per il bottone di pagamento
+     */
     private JButton pagamento = null;
+
+    /** Attributi per le etichette poste sopra i form di inserimento
+     */
     private JLabel inte, num, scad, cvv, pag = null;
 
+    /** Metodo per istanziare e settare le dimensioni/posizioni del form
+     @return nulla poichè void
+     */
     @Override
     public void createForm() {
         intestatario = new JTextField();
@@ -45,10 +69,12 @@ public class PaymentCardForm implements Form {
         pagamento.addActionListener(PrivateConcreteHandler.getInstance());
     }
 
+    /** Metodo per la comunicazione dei dati immessi al database
+     @return nulla poichè void
+     */
     public static void comunicate(){
         ClientProxy.getInstance().write("BOOKING,PAYMENT,"+ RoomMemento.getInstance().restoreState());
         String result = ClientProxy.getInstance().read();
-
         if(result.equals("True")){
             JOptionPane.showMessageDialog(new JFrame(), "Prenotazione effettuata con successo.","Operazione effettuata", JOptionPane.INFORMATION_MESSAGE);
         } else {
@@ -58,6 +84,10 @@ public class PaymentCardForm implements Form {
         ClientVisitor.getInstance().VisitPrivate("init");
     }
 
+
+    /** Metodo per inserimento del form all'interno del frame
+     * @param finestra (visualizzata)
+     */
     @Override
     public void insertForm(JFrame finestra) {
         finestra.add(intestatario);
