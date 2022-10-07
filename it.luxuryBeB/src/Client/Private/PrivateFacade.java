@@ -16,6 +16,7 @@ import java.awt.event.ActionEvent;
 import java.nio.channels.CancelledKeyException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class PrivateFacade {
@@ -49,8 +50,11 @@ public class PrivateFacade {
         JFrame finestra = Frame.restoreState();
 
         Form booking = PF.createForm("booking");
+        Button back = PF.createButton("back");
         booking.createForm();
         booking.insertForm(finestra);
+        back.createButton();
+        back.insertButton(finestra);
 
         finestra.setVisible(true);
 
@@ -62,21 +66,30 @@ public class PrivateFacade {
         JFrame finestra = Frame.restoreState();
 
         Form payment = PF.createForm("payment");
+        Button back = PF.createButton("back");
         payment.createForm();
         payment.insertForm(finestra);
+        back.createButton();
+        back.insertButton(finestra);
 
         finestra.setVisible(true);
     }
 
     public void ViewB(){
+        AbstractFactory PF = FactoryMaker.getInstance().getFactory("private");
         FrameMemento Frame=FrameMemento.getInstance();
         Frame.setMemento();
         JFrame finestra = Frame.restoreState();
 
-        ClientProxy.getInstance().write("PRIVATE,VIEW,booking,us_email,"+ UserMemento.getInstance().restoreState());
+        Button back = PF.createButton("back");
+        back.createButton();
+        back.insertButton(finestra);
+
+
+        ClientProxy.getInstance().write("BOOKING,VIEW,booking,us_email,"+ UserMemento.getInstance().restoreState());
         String riepilogo = ClientProxy.getInstance().read();
         if(!riepilogo.isEmpty()){
-            List<String> label = List.of(riepilogo.split("-"));
+            List<String> label = List.of(riepilogo.split("/"));
             for (int i=0; i<label.size(); i++) {
                 String[] realriepilogo = label.get(i).split(",");
 
@@ -92,16 +105,16 @@ public class PrivateFacade {
                 JLabel us_em = new JLabel("Email:");
                 JLabel num_sta = new JLabel("Numero stanza:");
 
-                data_inizio.setBounds(300, 100+(50*i),100,30);
-                data_fine.setBounds(450, 100+(50*i),100,30);
-                us_email.setBounds(600,100+(50*i), 100, 30);
-                numero_stanza.setBounds(750, 100+(50*i), 100, 30);
-                delete.setBounds(900,100+(50*i),200,30);
+                data_inizio.setBounds(100, 100+(50*i),100,30);
+                data_fine.setBounds(250, 100+(50*i),100,30);
+                us_email.setBounds(400,100+(50*i), 100, 30);
+                numero_stanza.setBounds(550, 100+(50*i), 100, 30);
+                delete.setBounds(600,100+(50*i),200,30);
 
-                dat_in.setBounds(300, 50+(50*i),100,30);
-                dat_fin.setBounds(450, 50+(50*i),100,30);
-                us_em.setBounds(600,50+(50*i), 100, 30);
-                num_sta.setBounds(750, 50+(50*i), 100, 30);
+                dat_in.setBounds(100, 50+(50*i),100,30);
+                dat_fin.setBounds(250, 50+(50*i),100,30);
+                us_em.setBounds(400,50+(50*i), 100, 30);
+                num_sta.setBounds(550, 50+(50*i), 100, 30);
 
                 delete.addActionListener(new ActionHandler() {
                     @Override
@@ -122,18 +135,21 @@ public class PrivateFacade {
                 finestra.add(us_email);
                 finestra.add(numero_stanza);
 
-                Calendar date = Calendar.getInstance();
-                SimpleDateFormat formatter = new SimpleDateFormat("dd-mm-yyyy");
+                finestra.add(dat_in);
+                finestra.add(dat_fin);
+                finestra.add(us_em);
+                finestra.add(num_sta);
+
+
+                SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+                Date date = new Date();
                 String sysdate = formatter.format(date);
 
                 if (realriepilogo[1].compareTo(sysdate) > 0) {
                     finestra.add(delete);
                 }
 
-                finestra.add(dat_in);
-                finestra.add(dat_fin);
-                finestra.add(us_em);
-                finestra.add(num_sta);
+
             }
             }
         }

@@ -1,13 +1,13 @@
 package Client.Private.booking;
 
 
+import Client.Authentication.UserMemento;
 import Client.ClientProxy;
 import Client.ClientVisitor;
 import Client.Interface.Handler.ActionHandler;
 import Client.Interface.Template.Form;
 import Client.Private.PrivateConcreteHandler;
 import Client.Private.RoomMemento;
-import Client.UserMemento;
 import org.jdatepicker.JDatePicker;
 import org.jdatepicker.UtilDateModel;
 
@@ -64,7 +64,7 @@ public class BookingDateForm implements Form {
         ClientProxy.getInstance().write("BOOKING,ROOMS,Room,data_inizio,"+di+",data_fine,"+du);
         String rooms = ClientProxy.getInstance().read();
         if(!rooms.isEmpty()){
-            List<String> label = List.of(rooms.split("-"));
+            List<String> label = List.of(rooms.split("/"));
             for (int i=0; i<label.size(); i++){
                 String[] real_rooms = label.get(i).split(",");
 
@@ -95,7 +95,7 @@ public class BookingDateForm implements Form {
                 prenota.addActionListener(new ActionHandler() {
                     @Override
                     public void actionPerformed(ActionEvent e) {
-                        RoomMemento.getInstance().setMemento("booking,codice,"+ThreadLocalRandom.current().nextInt()+",data_inizio"+di+",data_fine,"+du+",us_email,"+ UserMemento.getInstance().RestoreState()+",numero_stanza,"+real_rooms[2]);
+                        RoomMemento.getInstance().setMemento("booking,codice,"+ThreadLocalRandom.current().nextInt()+",data_inizio,"+di+",data_fine,"+du+",us_email,"+ UserMemento.getInstance().restoreState()+",numero_stanza,"+real_rooms[2]);
                         ClientVisitor.getInstance().VisitPrivate("payment");
                     }
                 });

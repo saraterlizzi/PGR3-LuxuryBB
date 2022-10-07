@@ -25,6 +25,7 @@ public class HandlerBooking extends Handler {
                 case "ROOMS" -> req = bdb.get(request.getQuery().getTable(),request.getQuery());
                 case "PAYMENT" -> req = bdb.add(request.getQuery().getTable(),request.getQuery());
                 case "DELETE" -> req = bdb.delete(request.getQuery().getTable(),request.getQuery());
+                case "VIEW" -> req = bdb.get(request.getQuery().getTable(),request.getQuery());
             }
             return req;
         } else return successor.handlerRequest(request);

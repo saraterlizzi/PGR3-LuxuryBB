@@ -48,7 +48,6 @@ public class OwnerOP implements Operations {
                 }
             }
             insert.append(")");
-            System.out.println(insert.toString());
             statement.executeUpdate(insert.toString());
             return "True";
         } catch (SQLException e) {
