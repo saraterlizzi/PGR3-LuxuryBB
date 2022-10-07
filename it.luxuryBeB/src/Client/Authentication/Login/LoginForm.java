@@ -10,16 +10,33 @@ import Client.Private.PrivateConcreteHandler;
 import javax.swing.*;
 import java.awt.*;
 
+/** Classe per la creazione del form inerente al login del Client
+ * @author Filomena De Rosa, Sara Terlizzi
+ * @see Form
+ */
 public class LoginForm implements Form {
+
+    /** Attributo statico per il form di inserimento dell'email
+     */
     private static JTextField email=null;
+
+    /** Attributo statico per il form di inserimento della password
+     */
     private static JPasswordField password=null;
+
+    /** Attributo per il bottone di login
+     */
     private JButton login=null;
+
+    /** Attributi per le etichette poste sopra i form di inserimento
+     */
     private JLabel em, ps, lg= null;
     private JLayeredPane layer = null;
     private JLabel rettangolo;
 
-
-
+    /** Metodo per istanziare e settare le dimensioni/posizioni del form
+     @return nulla poichè void
+     */
     @Override
     public void createForm() {
         email = new JTextField();
@@ -54,6 +71,9 @@ public class LoginForm implements Form {
         layer.add(lg,Integer.valueOf(2));
     }
 
+    /** Metodo per la comunicazione dei dati immessi al database
+     @return nulla poichè void
+     */
     public static void comunicate(){
         String mail = email.getText();
         String passw = new String(password.getPassword());
@@ -76,8 +96,9 @@ public class LoginForm implements Form {
         }
     }
 
-
-
+    /** Metodo per inserimento del form all'interno del frame
+     * @param finestra (visualizzata)
+     */
     @Override
     public void insertForm(JFrame finestra) {
        finestra.add(layer);

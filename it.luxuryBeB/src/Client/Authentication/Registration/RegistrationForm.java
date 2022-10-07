@@ -7,17 +7,42 @@ import Client.Interface.Template.Form;
 
 import javax.swing.*;
 
+/** Classe per la creazione del form inerente alla registrazione del Client
+ * @author Filomena De Rosa, Sara Terlizzi
+ * @see Form
+ */
 public class RegistrationForm implements Form {
+    /** Attributo statico per il form di inserimento dell'email
+     */
     private static JTextField email=null;
+
+    /** Attributo statico per il form di inserimento della password
+     */
     private static JPasswordField password=null;
+
+    /** Attributo per il bottone di registrazione
+     */
     private JButton conferma=null;
+
+    /** Attributo statico per il form di inserimento del nome
+     */
     private static JTextField nome=null;
+
+    /** Attributo statico per il form di inserimento del cognome
+     */
     private static JTextField cognome=null;
+
+    /** Attributo statico per il form di inserimento del codice fiscale
+     */
     private static JTextField codicefiscale=null;
 
+    /** Attributi per le etichette poste sopra i form di inserimento
+     */
     private JLabel em, ps, nom, cgn, cf, rg= null;
 
-
+    /** Metodo per istanziare e settare le dimensioni/posizioni del form
+     @return nulla poichè void
+     */
     @Override
     public void createForm() {
         email = new JTextField();
@@ -50,6 +75,9 @@ public class RegistrationForm implements Form {
         conferma.addActionListener(AuthenticationConcreteHandler.getInstance());
     }
 
+    /** Metodo per la comunicazione dei dati immessi al database
+     @return nulla poichè void
+     */
     public static void comunicate(){
         String ml = "email,"+email.getText();
         String user = ml+",password,"+new String(password.getPassword());
@@ -73,6 +101,9 @@ public class RegistrationForm implements Form {
         }
     }
 
+    /** Metodo per inserimento del form all'interno del frame
+     * @param finestra (visualizzata)
+     */
     @Override
     public void insertForm(JFrame finestra) {
         finestra.add(email);
