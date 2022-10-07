@@ -1,8 +1,11 @@
 package Client.Private.booking;
 
 import Client.Authentication.AuthenticationConcreteHandler;
+import Client.ClientProxy;
+import Client.ClientVisitor;
 import Client.Interface.Template.Form;
 import Client.Private.PrivateConcreteHandler;
+import Client.Private.RoomMemento;
 
 import javax.swing.*;
 
@@ -43,7 +46,16 @@ public class PaymentCardForm implements Form {
     }
 
     public static void comunicate(){
+        ClientProxy.getInstance().write("BOOKING,PAYMENT,"+ RoomMemento.getInstance().restoreState());
+        String result = ClientProxy.getInstance().read();
 
+        if(result.equals("True")){
+            JOptionPane.showMessageDialog(new JFrame(), "Prenotazione effettuata con successo.","Operazione effettuata", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(new JFrame(), "Error, prenotazione fallita.","ATTENZIONE",JOptionPane.WARNING_MESSAGE);
+
+        }
+        ClientVisitor.getInstance().VisitPrivate("init");
     }
 
     @Override

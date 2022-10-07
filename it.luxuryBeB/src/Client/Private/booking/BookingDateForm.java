@@ -2,13 +2,19 @@ package Client.Private.booking;
 
 
 import Client.ClientProxy;
+import Client.ClientVisitor;
+import Client.Interface.Handler.ActionHandler;
 import Client.Interface.Template.Form;
 import Client.Private.PrivateConcreteHandler;
+import Client.Private.RoomMemento;
+import Client.UserMemento;
 import org.jdatepicker.JDatePicker;
 import org.jdatepicker.UtilDateModel;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class BookingDateForm implements Form {
 
@@ -24,6 +30,8 @@ public class BookingDateForm implements Form {
     private JLabel in, fin = null;
 
     private static  UtilDateModel inizio, fine = null;
+
+
 
 
     @Override
@@ -49,8 +57,9 @@ public class BookingDateForm implements Form {
     }
 
     public static void comunicate(){
-       String di = inizio.getYear()+"-"+inizio.getMonth()+"-"+inizio.getDay();
-       String du = fine.getYear()+"-"+fine.getMonth()+"-"+ fine.getDay();
+
+       String di = inizio.getYear()+"-"+(inizio.getMonth()+1)+"-"+inizio.getDay();
+       String du = fine.getYear()+"-"+(fine.getMonth()+1)+"-"+ fine.getDay();
 
         ClientProxy.getInstance().write("BOOKING,ROOMS,Room,data_inizio,"+di+",data_fine,"+du);
         String rooms = ClientProxy.getInstance().read();
@@ -72,16 +81,24 @@ public class BookingDateForm implements Form {
                 JLabel prz = new JLabel("Prezzo:");
 
 
-                numero.setBounds(300, 100+(50*i),100,30);
-                tipologia.setBounds(450, 100+(50*i),100,30);
-                posti.setBounds(600,100+(50*i), 100, 30);
-                prezzo.setBounds(750, 100+(50*i), 100, 30);
-                prenota.setBounds(900,100+(50*i),100,30);
+                numero.setBounds(50, 200+(100*i),100,30);
+                tipologia.setBounds(150, 200+(100*i),100,30);
+                posti.setBounds(270,200+(100*i), 100, 30);
+                prezzo.setBounds(350, 200+(100*i), 100, 30);
+                prenota.setBounds(400,200+(100*i),100,30);
 
-                num.setBounds(300, 50+(50*i),100,30);
-                tip.setBounds(450, 50+(50*i),100,30);
-                pst.setBounds(600,50+(50*i), 100, 30);
-                prz.setBounds(750, 50+(50*i), 100, 30);
+                num.setBounds(50, 150+(100*i),100,30);
+                tip.setBounds(150, 150+(100*i),100,30);
+                pst.setBounds(270,150+(100*i), 100, 30);
+                prz.setBounds(350, 150+(100*i), 100, 30);
+
+                prenota.addActionListener(new ActionHandler() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        RoomMemento.getInstance().setMemento("booking,codice,"+ThreadLocalRandom.current().nextInt()+",data_inizio"+di+",data_fine,"+du+",us_email,"+ UserMemento.getInstance().RestoreState()+",numero_stanza,"+real_rooms[2]);
+                        ClientVisitor.getInstance().VisitPrivate("payment");
+                    }
+                });
 
                 finestra.add(numero);
                 finestra.add(tipologia);
@@ -97,7 +114,6 @@ public class BookingDateForm implements Form {
             }
         }
         finestra.repaint();
-        finestra.setVisible(true);
 
     }
 
