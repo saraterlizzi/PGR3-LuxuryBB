@@ -14,7 +14,6 @@ import Client.Private.PrivateFacade;
 public class ClientVisitor implements Visitor {
 
     /** Attributo statico per l'applicazione del pattern Singleton
-     *
      */
     private static ClientVisitor instance=null;
 

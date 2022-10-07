@@ -13,9 +13,21 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.util.List;
 
+/**
+ * Classe per l'implementazione del pattern Visitor per visitare i sottosistemi del package Owner
+ * @author Filomena De Rosa, Sara Terlizzi
+ * @see Visitor
+ */
+
 public class OwnerVisitor implements Visitor {
 
+    /** Attributo statico per l'applicazione del pattern Singleton
+     */
     private static OwnerVisitor instance=null;
+
+    /** Metodo per implementare il pattern Singleton
+     @return instance (l'unica istanza della classe)
+     */
 
     public static OwnerVisitor getInstance() {
         if (instance == null) {
@@ -24,7 +36,9 @@ public class OwnerVisitor implements Visitor {
         return instance;
     }
 
-
+    /** Metodo per visitare il sottopackage Check
+     @return nulla poichè void
+     */
     @Override
     public void VisitCheck() {
         AbstractFactory IF = FactoryMaker.getInstance().getFactory("init");
@@ -89,6 +103,9 @@ public class OwnerVisitor implements Visitor {
         finestra.setVisible(true);
     }
 
+    /** Metodo per visitare il sottopackage Insert
+     @return nulla poichè void
+     */
     @Override
     public void VisitInsert() {
         AbstractFactory IF = FactoryMaker.getInstance().getFactory("init");
@@ -110,6 +127,9 @@ public class OwnerVisitor implements Visitor {
         finestra.setVisible(true);
     }
 
+    /** Metodo per visitare il sottopackage Init
+     @return nulla poichè void
+     */
     @Override
     public void VisitInit() {
         AbstractFactory IF = FactoryMaker.getInstance().getFactory("init");
@@ -178,6 +198,9 @@ public class OwnerVisitor implements Visitor {
         finestra.setVisible(true);
     }
 
+    /** Metodo per visitare il sottopackage Modify
+     @return nulla poichè void
+     */
     @Override
     public void VisitModify() {
         AbstractFactory IF = FactoryMaker.getInstance().getFactory("init");
@@ -250,6 +273,9 @@ public class OwnerVisitor implements Visitor {
         finestra.setVisible(true);
     }
 
+    /** Metodo per visitare il sottopackage Proxy
+     @return nulla poichè void
+     */
     public void VisitProxy(String where){
         SocketProxy P = OwnerProxy.getInstance();
         switch (where){
