@@ -2,9 +2,17 @@ package Client;
 
 import Client.Authentication.AuthenticationFactory;
 import Client.Interface.AbstractFactory;
+import Client.Interface.SocketProxy;
 import Client.Private.PrivateFactory;
 
+/**
+ * Classe per l'implementazione del pattern
+ * @author Filomena De Rosa, Sara Terlizzi
+ * @see SocketProxy
+ */
 public class FactoryMaker {
+
+
     private static FactoryMaker Instance=null;
 
     public static FactoryMaker getInstance(){
