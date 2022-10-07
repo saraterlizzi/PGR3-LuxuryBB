@@ -4,10 +4,25 @@ import Client.Interface.Memento;
 
 import javax.swing.*;
 
+/**
+ * Classe per l'implementazione del pattern Memento per salvare il JFrame e renderlo accessibile globalmente
+ a tutte le classi
+ * @author Filomena De Rosa, Sara Terlizzi
+ * @see Owner.Interface.Template.Memento
+ */
+
 public class FrameMemento implements Memento {
+    /** Attributo statico per l'applicazione del pattern Singleton
+     */
     private static FrameMemento instance;
+
+    /** Attributo per il frame generale dell'Owner
+     */
     private JFrame Frame=null;
 
+    /** Metodo per implementare il pattern Singleton
+     @return instance (l'unica istanza della classe)
+     */
     public static FrameMemento getInstance() {
         if (instance == null) {
             instance = new FrameMemento();
@@ -15,6 +30,9 @@ public class FrameMemento implements Memento {
         return instance;
     }
 
+    /** Metodo per settare e impostare il frame generale
+     @return nulla poichè void
+     */
     public void  setMemento(){
         if(this.Frame==null){
             this.Frame=new JFrame("Luxury B&B");
@@ -32,6 +50,9 @@ public class FrameMemento implements Memento {
         });
     }
 
+    /** Metodo per resettare il frame generale
+     @return this.Frame (il frame stesso)
+     */
     public JFrame restoreState(){
         this.Frame.getContentPane().removeAll();
         this.Frame.repaint();
