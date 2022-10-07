@@ -12,7 +12,7 @@ public class RegistrationButton implements Button {
     @Override
     public void createButton() {
         registration = new JButton("Registrati");
-        registration.setBounds(50, 140, 200, 30);
+        registration.setBounds(50, 240, 200, 30);
 
         registration.setActionCommand("Authentication-Button-Registration");
         registration.addActionListener(AuthenticationConcreteHandler.getInstance());

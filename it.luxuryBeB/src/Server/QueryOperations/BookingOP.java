@@ -16,11 +16,8 @@ public class BookingOP implements Operations {
         try {
             Statement statement = db.createStatement();
             StringBuilder q = new StringBuilder();
-            if(table.equals("Room")){
-                q.append("select * from Room where stato stato = 1");
-            }else {
-                q.append("select * from "+table+" where "+query.getAttributi().get(0)+" = "+query.getValori().get(0));
-            }
+            q.append("select * from "+table+" where numero not in (select numero_stanza from booking where "+query.getValori().get(0)+" >= date '"+query.getAttributi().get(0)+"' AND "+query.getValori().get(1)+ " <= date '"+query.getAttributi().get(1)+"') AND stato = 1");
+            System.out.println(q.toString());
             StringBuilder list = new StringBuilder();
             ResultSet result = statement.executeQuery(String.valueOf(q));
             while(result.next()){
@@ -37,33 +34,7 @@ public class BookingOP implements Operations {
 
     @Override
     public String add(String table, Query query) {
-        Connection db = Database.getInstance().getConnection();
-        try {
-            Statement statement = db.createStatement();
-            if(research(table, query, statement)){
-                return "False";
-            }
-            StringBuilder insert = new StringBuilder("insert into "+table+" values (");
-            for (int i=0; i<query.getValori().size(); i++){
-                insert.append("'").append(query.getAttributi().get(i)).append("'");
-                if(i<query.getValori().size()-1){
-                    insert.append(",");
-                }
-            }
-            insert.append(")");
-            statement.executeUpdate(insert.toString());
-            return "True";
-        } catch (SQLException e) {
-            try {
-                Statement statement = db.createStatement();
-                if(research(table,query,statement)){
-                    statement.executeUpdate("DELETE FROM "+table+" where "+query.getAttributi().get(0)+" = '"+query.getValori().get(0)+"'");
-                }
 
-            } catch (SQLException ex) {
-                throw new RuntimeException(ex);
-            }
-        }
         return "False";
     }
 
@@ -76,7 +47,7 @@ public class BookingOP implements Operations {
         Connection db = Database.getInstance().getConnection();
         try {
             Statement statement = db.createStatement();
-            String que = "DELETE FROM "+table+" WHERE "+query.getAttributi().get(0)+" = '"+query.getValori().get(0)+"'";
+            String que = "DELETE FROM "+table+" WHERE "+query.getValori().get(0)+" = '"+query.getAttributi().get(0)+"'";
             statement.executeUpdate(que);
             return "True";
         } catch (SQLException e) {

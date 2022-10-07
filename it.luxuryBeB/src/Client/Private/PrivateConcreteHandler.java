@@ -32,7 +32,7 @@ public class PrivateConcreteHandler extends ActionHandler {
                 }
             } else if ((e.getActionCommand().contains("Button"))) {
                 if(e.getActionCommand().contains("Booking")){
-                    ClientVisitor.getInstance().VisitPrivate("registration");
+                    ClientVisitor.getInstance().VisitPrivate("booking");
                 } else if (e.getActionCommand().contains("Payment")) {
                     ClientVisitor.getInstance().VisitPrivate("payment");
                 } else if (e.getActionCommand().contains("View")) {
