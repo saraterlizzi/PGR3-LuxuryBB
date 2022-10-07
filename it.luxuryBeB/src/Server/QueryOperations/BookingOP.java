@@ -72,6 +72,18 @@ public class BookingOP implements Operations {
        return null;
     }
 
+    public String delete(String table, Query query){
+        Connection db = Database.getInstance().getConnection();
+        try {
+            Statement statement = db.createStatement();
+            String que = "DELETE FROM "+table+" WHERE "+query.getAttributi().get(0)+" = '"+query.getValori().get(0)+"'";
+            statement.executeUpdate(que);
+            return "True";
+        } catch (SQLException e) {
+            return "False";
+        }
+    }
+
     @Override
     public boolean research(String table, Query query, Statement statement) {
         return false;
