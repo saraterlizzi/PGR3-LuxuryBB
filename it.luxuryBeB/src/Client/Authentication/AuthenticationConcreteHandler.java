@@ -8,6 +8,11 @@ import Client.Interface.Handler.ActionHandler;
 
 import java.awt.event.ActionEvent;
 
+/**
+ * Scopo della classe
+ * @author Filomena De Rosa, Sara Terlizzi
+ * @see ActionHandler
+ */
 public class AuthenticationConcreteHandler extends ActionHandler {
 
     private static ActionHandler instance = null;
