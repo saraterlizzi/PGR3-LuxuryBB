@@ -5,10 +5,19 @@ import Owner.OwnerConcreteHandler;
 
 import javax.swing.*;
 
-public class ModifyStateButton implements Button {
+/** Classe per la creazione del bottone inerente alla modifica dello stato delle camere
+ * @author Filomena De Rosa, Sara Terlizzi
+ * @see Button
+ */
 
+public class ModifyStateButton implements Button {
+    /** Attributo per il bottone di modifica dello stato delle camere
+     */
     private JButton Modify = null;
 
+    /** Metodo per istanziare e settare le dimensioni/posizioni del bottone
+     @return nulla poichè void
+     */
     @Override
     public void createButton() {
         Modify = new JButton("Modifica stato");
@@ -18,6 +27,9 @@ public class ModifyStateButton implements Button {
         Modify.addActionListener(OwnerConcreteHandler.getInstance());
     }
 
+    /** Metodo per inserimento del bottone all'interno del frame
+     * @param finestra (visualizzata)
+     */
     @Override
     public void insertButton(JFrame finestra) {
     finestra.add(Modify);

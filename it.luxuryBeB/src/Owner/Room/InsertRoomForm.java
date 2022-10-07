@@ -7,17 +7,39 @@ import Owner.OwnerVisitor;
 
 import javax.swing.*;
 
-public class InsertRoomForm implements Form {
+/** Classe per la creazione del form inerente all'inserimento delle camere
+ * @author Filomena De Rosa, Sara Terlizzi
+ * @see Form
+ */
 
+public class InsertRoomForm implements Form {
+    /** Attributo statico per il form di inserimento del numero della camera
+     */
     private static JTextField numero = null;
+
+    /** Attributo statico per il form di inserimento della tipologia della camera
+     */
     private static JTextField tipologia = null;
+
+    /** Attributo statico per il form di inserimento del prezzo della camera
+     */
     private static JTextField prezzo = null;
+
+    /** Attributo statico per il form di inserimento dei posti della camera
+     */
     private static JTextField posti = null;
 
+    /** Attributo per il bottone di inserimento
+     */
     private JButton inserimento = null;
 
+    /** Attributi per le etichette poste sopra i form di inserimento
+     */
     private JLabel num, tip, prz, pst, ins = null;
 
+    /** Metodo per la comunicazione dei dati immessi al database
+     @return nulla poichè void
+     */
     public static void comunicate() {
         String richiesta = "OWNER,INSERTROOM,Room,tipologia,"+tipologia.getText()+",posti,"+posti.getText()+",numero,"+numero.getText()+",prezzo,"+prezzo.getText()+",stato,1";
         OwnerProxy server = OwnerProxy.getInstance();
@@ -31,7 +53,9 @@ public class InsertRoomForm implements Form {
         }
     }
 
-
+    /** Metodo per istanziare e settare le dimensioni/posizioni del form
+     @return nulla poichè void
+     */
     @Override
     public void createForm() {
         numero = new JTextField();
@@ -60,6 +84,9 @@ public class InsertRoomForm implements Form {
        inserimento.addActionListener(OwnerConcreteHandler.getInstance());
     }
 
+    /** Metodo per inserimento del form all'interno del frame
+     * @param finestra (visualizzata)
+     */
     @Override
     public void insertForm(JFrame finestra) {
         finestra.add(numero);
