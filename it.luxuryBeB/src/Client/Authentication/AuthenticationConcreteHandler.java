@@ -9,14 +9,19 @@ import Client.Interface.Handler.ActionHandler;
 import java.awt.event.ActionEvent;
 
 /**
- * Scopo della classe
+ * Classe che estende ActionHandler per la gestione di eventi provocati dai JButton del sottopackage Authentication
  * @author Filomena De Rosa, Sara Terlizzi
  * @see ActionHandler
  */
 public class AuthenticationConcreteHandler extends ActionHandler {
 
+    /** Attributo statico per l'applicazione del pattern Singleton
+     */
     private static ActionHandler instance = null;
 
+    /** Metodo per implementare il pattern Singleton
+     @return instance (l'unica istanza della classe)
+     */
     public static ActionHandler getInstance(){
         if (instance==null)
         {
@@ -25,6 +30,10 @@ public class AuthenticationConcreteHandler extends ActionHandler {
         return instance;
     }
 
+    /** Metodo per la gestione degli ActionEvent dei bottoni
+     @param e (evento provocato dal bottone)
+     @return nulla poichè void
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().contains("Authentication")){

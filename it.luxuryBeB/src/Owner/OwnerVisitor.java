@@ -18,7 +18,6 @@ import java.util.List;
  * @author Filomena De Rosa, Sara Terlizzi
  * @see Visitor
  */
-
 public class OwnerVisitor implements Visitor {
 
     /** Attributo statico per l'applicazione del pattern Singleton
@@ -98,8 +97,6 @@ public class OwnerVisitor implements Visitor {
                 finestra.add(num_sta);
             }
         }
-
-
         finestra.setVisible(true);
     }
 

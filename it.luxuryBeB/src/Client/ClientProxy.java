@@ -17,22 +17,18 @@ import java.net.Socket;
 public class ClientProxy implements SocketProxy {
 
     /** Attributo per la connessione mediante socket
-     *
      */
     private Socket socket=null;
 
     /** Attributo per la lettura dei dati presi in input tramite socket
-     *
      */
     private DataInputStream dis = null;
 
     /** Attributo per la scrittura su socket
-     *
      */
     private PrintWriter pw = null;
 
     /** Attributo statico per l'applicazione del pattern Singleton
-     *
      */
     private static ClientProxy instance = null;
 
