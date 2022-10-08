@@ -19,15 +19,28 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Classe per implementare il pattern Facade nel sottopackage Private
+ * @author Filomena De Rosa, Sara Terlizzi
+ */
 public class PrivateFacade {
+    /** Attributo statico per l'applicazione del pattern Singleton
+     */
     private static PrivateFacade instance=null;
 
+    /** Metodo per implementare il pattern Singleton
+     @return instance (l'unica istanza della classe)
+     */
     public static PrivateFacade getInstance() {
         if (instance == null) {
             instance = new PrivateFacade();
         }
         return instance;
     }
+
+    /** Metodo per implementare la pagina iniziale del Client dopo aver effettuato il login
+     @return nulla poichè void
+     */
     public void PrivateInt(){
         AbstractFactory PF = FactoryMaker.getInstance().getFactory("private");
         FrameMemento Frame=FrameMemento.getInstance();
@@ -43,6 +56,10 @@ public class PrivateFacade {
 
         finestra.setVisible(true);
     }
+
+    /** ;Metodo per implementare la scelta delle camere in un determinato periodo di tempo
+     @return nulla poichè void
+     */
     public void Booking(){
         AbstractFactory PF = FactoryMaker.getInstance().getFactory("private");
         FrameMemento Frame=FrameMemento.getInstance();
@@ -57,8 +74,11 @@ public class PrivateFacade {
         back.insertButton(finestra);
 
         finestra.setVisible(true);
-
     }
+
+    /** Metodo per implementare la parte del pagamento
+     @return nulla poichè void
+     */
     public void Payment(){
         AbstractFactory PF = FactoryMaker.getInstance().getFactory("private");
         FrameMemento Frame=FrameMemento.getInstance();
@@ -75,6 +95,9 @@ public class PrivateFacade {
         finestra.setVisible(true);
     }
 
+    /** Metodo per implementare la parte in cui verranno visualizzate tutte le prenotazioni effettuate
+     @return nulla poichè void
+     */
     public void ViewB(){
         AbstractFactory PF = FactoryMaker.getInstance().getFactory("private");
         FrameMemento Frame=FrameMemento.getInstance();
@@ -84,7 +107,6 @@ public class PrivateFacade {
         Button back = PF.createButton("back");
         back.createButton();
         back.insertButton(finestra);
-
 
         ClientProxy.getInstance().write("BOOKING,VIEW,booking,us_email,"+ UserMemento.getInstance().restoreState());
         String riepilogo = ClientProxy.getInstance().read();
@@ -140,7 +162,6 @@ public class PrivateFacade {
                 finestra.add(us_em);
                 finestra.add(num_sta);
 
-
                 SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
                 Date date = new Date();
                 String sysdate = formatter.format(date);
@@ -148,8 +169,6 @@ public class PrivateFacade {
                 if (realriepilogo[1].compareTo(sysdate) > 0) {
                     finestra.add(delete);
                 }
-
-
             }
             }
         }

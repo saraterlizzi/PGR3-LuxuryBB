@@ -14,7 +14,6 @@ import java.awt.event.ActionEvent;
  * @see ActionHandler
  */
 public class AuthenticationConcreteHandler extends ActionHandler {
-
     /** Attributo statico per l'applicazione del pattern Singleton
      */
     private static ActionHandler instance = null;

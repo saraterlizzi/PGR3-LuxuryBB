@@ -11,7 +11,6 @@ import Client.Private.PrivateFactory;
  * @author Filomena De Rosa, Sara Terlizzi
  */
 public class FactoryMaker {
-
     /** Attributo statico per l'applicazione del pattern Singleton
      */
     private static FactoryMaker Instance=null;
@@ -25,6 +24,7 @@ public class FactoryMaker {
         }
         return Instance;
     }
+
     /** Metodo per ritornare le istanze degli Abstract Factory
      @param factory (stringa di riferimento per capire quale Abstract Factory si vuole utilizzare)
      @return l'istanziamento dell'Abstract Factory scelto

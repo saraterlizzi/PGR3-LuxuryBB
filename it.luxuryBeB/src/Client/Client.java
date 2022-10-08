@@ -6,9 +6,7 @@ package Client;
  * @see ClientVisitor
  * @see ClientProxy
  */
-
 public class Client {
-
     /**
      Metodo main dell'intero package Client
      @param args valori presi tramite linea di comando

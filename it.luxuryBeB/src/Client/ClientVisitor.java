@@ -10,9 +10,7 @@ import Client.Private.PrivateFacade;
  * @author Filomena De Rosa, Sara Terlizzi
  * @see Visitor
  */
-
 public class ClientVisitor implements Visitor {
-
     /** Attributo statico per l'applicazione del pattern Singleton
      */
     private static ClientVisitor instance=null;
