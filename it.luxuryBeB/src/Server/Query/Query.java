@@ -19,8 +19,6 @@ public class Query {
     private final ArrayList<String> valori;
 
     /**Costruttore della classe Query
-     * @param attributi (parametro implicito)
-     * @param valori (parametro implicito)
      */
     public Query(){
         this.attributi = new ArrayList<String>();
