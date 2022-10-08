@@ -2,8 +2,16 @@ package Server.Query;
 
 import java.util.ArrayList;
 
+/**Classe che estende la funzione Query per l'applicazione del pattern adapter
+ * @author Filomena De Rosa, Sara Terlizzi
+ * @see Query
+ */
 public class QueryAdapter extends Query{
 
+    /**Metodo che adatta le stringhe prese in input per inserirle nella query
+     * @param x
+     * @return query
+     */
     public Query adapter(ArrayList<String> x){
 
         Query query = new Query();
