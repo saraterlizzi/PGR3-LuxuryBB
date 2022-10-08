@@ -27,7 +27,6 @@ public class ClientVisitor implements Visitor {
 
     /** Metodo per visitare il sottopackage Authentication
      @param where (stringa per distinguere in quale parte del sottopackage dirigersi)
-     @return nulla poichè void
      */
     @Override
     public void VisitAuthentication(String where) {
@@ -40,7 +39,6 @@ public class ClientVisitor implements Visitor {
 
     /** Metodo per visitare il sottopackage Private
      @param where (stringa per distinguere in quale parte del sottopackage dirigersi)
-     @return nulla poichè void
      */
     @Override
     public void VisitPrivate(String where) {
@@ -55,7 +53,6 @@ public class ClientVisitor implements Visitor {
 
     /** Metodo per visitare il sottopackage Proxy
      @param where (stringa per distinguere in quale parte del sottopackage dirigersi)
-     @return nulla poichè void
      */
     public void VisitProxy(String where){
         SocketProxy P = ClientProxy.getInstance();

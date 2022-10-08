@@ -31,7 +31,6 @@ public class UserMemento implements Memento {
      @param email (dell'user)
      @param password (dell'user)
      @param id (dell'user)
-     @return nulla poichè void
      */
     public void setMemento (String email, String password, String id){
         this.email=email;

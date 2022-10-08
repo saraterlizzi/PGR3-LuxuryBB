@@ -41,7 +41,6 @@ public class RegistrationForm implements Form {
     private JLabel em, ps, nom, cgn, cf, rg= null;
 
     /** Metodo per istanziare e settare le dimensioni/posizioni del form
-     @return nulla poichè void
      */
     @Override
     public void createForm() {
@@ -76,7 +75,6 @@ public class RegistrationForm implements Form {
     }
 
     /** Metodo per la comunicazione dei dati immessi al database
-     @return nulla poichè void
      */
     public static void comunicate(){
         String ml = "email,"+email.getText();

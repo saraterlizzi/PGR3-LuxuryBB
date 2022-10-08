@@ -39,7 +39,6 @@ public class PaymentCardForm implements Form {
     private JLabel inte, num, scad, cvv, pag = null;
 
     /** Metodo per istanziare e settare le dimensioni/posizioni del form
-     @return nulla poichè void
      */
     @Override
     public void createForm() {
@@ -70,7 +69,6 @@ public class PaymentCardForm implements Form {
     }
 
     /** Metodo per la comunicazione dei dati immessi al database
-     @return nulla poichè void
      */
     public static void comunicate(){
         ClientProxy.getInstance().write("BOOKING,PAYMENT,"+ RoomMemento.getInstance().restoreState());

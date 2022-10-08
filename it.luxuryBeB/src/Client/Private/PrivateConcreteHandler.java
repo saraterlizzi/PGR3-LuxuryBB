@@ -33,7 +33,6 @@ public class PrivateConcreteHandler extends ActionHandler {
 
     /** Metodo per la gestione degli ActionEvent dei bottoni
      @param e (evento provocato dal bottone)
-     @return nulla poichè void
      */
     @Override
     public void actionPerformed(ActionEvent e) {

@@ -27,7 +27,7 @@ public class FactoryMaker {
 
     /** Metodo per ritornare le istanze degli Abstract Factory
      @param factory (stringa di riferimento per capire quale Abstract Factory si vuole utilizzare)
-     @return l'istanziamento dell'Abstract Factory scelto
+     @return switch
      */
     public AbstractFactory getFactory(String factory){
         return switch (factory){

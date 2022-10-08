@@ -46,7 +46,7 @@ public class PrivateFactory implements AbstractFactory {
 
     /** Metodo per l'istanziamento del testo
      @param type (quale tipologia di testo si vuole istanziare)
-     @return nulla
+     @return null
      */
     @Override
     public Text createText(String type) {

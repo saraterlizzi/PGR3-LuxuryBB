@@ -39,7 +39,6 @@ public class PrivateFacade {
     }
 
     /** Metodo per implementare la pagina iniziale del Client dopo aver effettuato il login
-     @return nulla poichè void
      */
     public void PrivateInt(){
         AbstractFactory PF = FactoryMaker.getInstance().getFactory("private");
@@ -58,7 +57,6 @@ public class PrivateFacade {
     }
 
     /** ;Metodo per implementare la scelta delle camere in un determinato periodo di tempo
-     @return nulla poichè void
      */
     public void Booking(){
         AbstractFactory PF = FactoryMaker.getInstance().getFactory("private");
@@ -77,7 +75,6 @@ public class PrivateFacade {
     }
 
     /** Metodo per implementare la parte del pagamento
-     @return nulla poichè void
      */
     public void Payment(){
         AbstractFactory PF = FactoryMaker.getInstance().getFactory("private");
@@ -96,7 +93,6 @@ public class PrivateFacade {
     }
 
     /** Metodo per implementare la parte in cui verranno visualizzate tutte le prenotazioni effettuate
-     @return nulla poichè void
      */
     public void ViewB(){
         AbstractFactory PF = FactoryMaker.getInstance().getFactory("private");

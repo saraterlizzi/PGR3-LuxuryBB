@@ -20,7 +20,6 @@ public class InsertRoomButton implements Button {
     private JLabel area = null;
 
     /** Metodo per istanziare e settare le dimensioni/posizioni del bottone e dell'etichetta
-     @return nulla poichè void
      */
     @Override
     public void createButton() {

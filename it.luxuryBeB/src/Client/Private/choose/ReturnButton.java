@@ -16,7 +16,6 @@ public class ReturnButton implements Button {
     private JButton returnb = new JButton("Torna indietro");
 
     /** Metodo per istanziare e settare le dimensioni/posizioni del bottone di ritorno
-     @return nulla poichè void
      */
     @Override
     public void createButton() {

@@ -42,7 +42,7 @@ public class ClientProxy implements SocketProxy {
     }
 
     /** Funzione wrapper per la lettura su socket
-     @return la stringa di risposta del Server
+     @return null
      */
     @Override
     public String read() {
@@ -56,7 +56,6 @@ public class ClientProxy implements SocketProxy {
 
     /** Funzione wrapper per la scrittura su socket
      @param richiesta
-     @return nulla, poichè void
      */
     @Override
     public void write(String richiesta) {
@@ -65,7 +64,6 @@ public class ClientProxy implements SocketProxy {
     }
 
     /** Funzione wrapper per la chiusura della connessione
-     @return nulla, poichè void
      */
     @Override
     public void close() {
@@ -88,7 +86,6 @@ public class ClientProxy implements SocketProxy {
     /** Funzione wrapper per il tentativo di connessione
      @param  IP (codice IPV4 per connessione con Server)
      @param porta (numero della porta)
-     @return nulla, poichè void
      */
     @Override
     public void connectionSetup(String IP, int porta) {
@@ -103,7 +100,6 @@ public class ClientProxy implements SocketProxy {
     }
 
     /** Funzione wrapper per porre fine alla connessione
-     @return nulla, poichè void
      */
     @Override
     public void end() {

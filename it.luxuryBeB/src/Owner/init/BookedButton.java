@@ -15,7 +15,6 @@ public class BookedButton implements Button {
     private JButton booked = null;
 
     /** Metodo per istanziare e settare le dimensioni/posizioni del bottone
-     @return nulla poichè void
      */
     @Override
     public void createButton() {

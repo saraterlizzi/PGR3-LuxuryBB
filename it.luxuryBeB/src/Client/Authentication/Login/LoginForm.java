@@ -35,7 +35,6 @@ public class LoginForm implements Form {
     private JLabel rettangolo;
 
     /** Metodo per istanziare e settare le dimensioni/posizioni del form
-     @return nulla poichè void
      */
     @Override
     public void createForm() {
@@ -72,7 +71,6 @@ public class LoginForm implements Form {
     }
 
     /** Metodo per la comunicazione dei dati immessi al database
-     @return nulla poichè void
      */
     public static void comunicate(){
         String mail = email.getText();

@@ -16,7 +16,6 @@ public class RegistrationButton implements Button {
     private JButton registration = null;
 
     /** Metodo per istanziare e settare le dimensioni/posizioni del bottone
-     @return nulla poichè void
      */
     @Override
     public void createButton() {

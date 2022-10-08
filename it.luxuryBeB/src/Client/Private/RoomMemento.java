@@ -29,7 +29,6 @@ public class RoomMemento implements Memento {
 
     /** Metodo per settare e impostare la richiesta
      @param request
-     @return nulla poichè void
      */
     public void setMemento(String request){
         this.request=request;

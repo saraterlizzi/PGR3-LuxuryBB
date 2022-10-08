@@ -15,7 +15,6 @@ public class RecapButton implements Button {
     private JButton recap = null;
 
     /** Metodo per istanziare e settare le dimensioni/posizioni del bottone
-     @return nulla poichè void
      */
     @Override
     public void createButton() {

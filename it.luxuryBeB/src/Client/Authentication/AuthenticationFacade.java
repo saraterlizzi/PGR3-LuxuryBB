@@ -32,7 +32,6 @@ public class AuthenticationFacade {
     }
 
     /** Metodo per implementare il login
-     @return nulla poichè void
      */
     public void login(){
         AbstractFactory AF = FactoryMaker.getInstance().getFactory("auth");
@@ -51,7 +50,6 @@ public class AuthenticationFacade {
     }
 
     /** Metodo per implementare la registrazione
-     @return nulla poichè void
      */
     public void register(){
         AbstractFactory AF = FactoryMaker.getInstance().getFactory("auth");
