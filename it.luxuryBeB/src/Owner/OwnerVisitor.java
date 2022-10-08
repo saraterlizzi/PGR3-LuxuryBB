@@ -36,7 +36,6 @@ public class OwnerVisitor implements Visitor {
     }
 
     /** Metodo per visitare il sottopackage Check
-     @return nulla poichè void
      */
     @Override
     public void VisitCheck() {
@@ -101,7 +100,6 @@ public class OwnerVisitor implements Visitor {
     }
 
     /** Metodo per visitare il sottopackage Insert
-     @return nulla poichè void
      */
     @Override
     public void VisitInsert() {
@@ -125,7 +123,6 @@ public class OwnerVisitor implements Visitor {
     }
 
     /** Metodo per visitare il sottopackage Init
-     @return nulla poichè void
      */
     @Override
     public void VisitInit() {
@@ -196,7 +193,6 @@ public class OwnerVisitor implements Visitor {
     }
 
     /** Metodo per visitare il sottopackage Modify
-     @return nulla poichè void
      */
     @Override
     public void VisitModify() {
@@ -271,7 +267,6 @@ public class OwnerVisitor implements Visitor {
     }
 
     /** Metodo per visitare il sottopackage Proxy
-     @return nulla poichè void
      */
     public void VisitProxy(String where){
         SocketProxy P = OwnerProxy.getInstance();

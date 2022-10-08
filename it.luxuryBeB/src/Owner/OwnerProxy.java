@@ -56,7 +56,6 @@ public class OwnerProxy implements SocketProxy {
 
     /** Funzione wrapper per la scrittura su socket
      @param richiesta
-     @return nulla, poichè void
      */
     @Override
     public void write(String richiesta) {
@@ -65,7 +64,6 @@ public class OwnerProxy implements SocketProxy {
     }
 
     /** Funzione wrapper per la chiusura della connessione
-     @return nulla, poichè void
      */
     @Override
     public void close() {
@@ -88,7 +86,7 @@ public class OwnerProxy implements SocketProxy {
     /** Funzione wrapper per il tentativo di connessione
      @param  IP (codice IPV4 per connessione con Client)
      @param porta (numero della porta)
-     @return nulla, poichè void
+
      */
 
     @Override
@@ -104,7 +102,6 @@ public class OwnerProxy implements SocketProxy {
     }
 
     /** Funzione wrapper per porre fine alla connessione
-     @return nulla, poichè void
      */
     @Override
     public void end() {

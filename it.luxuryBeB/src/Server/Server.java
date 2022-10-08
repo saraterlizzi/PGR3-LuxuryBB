@@ -26,7 +26,6 @@ public class Server {
     /**
      Metodo main dell'intero package Server
      @param args valori presi tramite linea di comando
-     @return nessuno poichè void
      */
     public static void main (String [] args) {
 

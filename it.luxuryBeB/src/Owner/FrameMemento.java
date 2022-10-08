@@ -31,7 +31,6 @@ public class FrameMemento implements Memento {
     }
 
     /** Metodo per settare e impostare il frame generale
-     @return nulla poichè void
      */
     public void  setMemento(){
         if(this.Frame==null){

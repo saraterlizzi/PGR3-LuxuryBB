@@ -13,7 +13,6 @@ public class Owner {
     /**
      Metodo main dell'intero package Owner
      @param args valori presi tramite linea di comando
-     @return nessuno poichè void
      */
     public static void main (String[] args){
         OwnerVisitor OV = OwnerVisitor.getInstance();

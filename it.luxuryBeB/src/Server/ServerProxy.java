@@ -49,7 +49,6 @@ public class ServerProxy implements Proxy {
 
     /**Funzione per l'inizializzazione del Server socket
      * @param port (porta d'ascolto, su cui avviene la connessione)
-     * @return nulla poichè void
      */
     @Override
     public void init(int port) {
@@ -61,7 +60,6 @@ public class ServerProxy implements Proxy {
     }
 
     /**Funzione wrapper per accettare la richiesta di connessione dal Client
-     * @return nulla poichè void
      */
     @Override
     public void accept() {
@@ -73,7 +71,6 @@ public class ServerProxy implements Proxy {
     }
 
     /**Funzione per il settaggio delle richieste di input/output tramite socket
-     * @return nulla poichè void
      */
     @Override
     public void setIO() {
@@ -87,8 +84,7 @@ public class ServerProxy implements Proxy {
     }
 
     /** Funzione wrapper per la scrittura su socket
-     @param text
-     @return nulla, poichè void
+     * @param text
      */
     @Override
     public void write(String text) {

@@ -34,7 +34,6 @@ public class Query {
 
     /**Funzione che imposta la tabella
      * @param table
-     * @return nulla poichè void
      */
     public void setTable(String table) {
         this.table = table;
@@ -56,7 +55,6 @@ public class Query {
 
     /**Funzione che aggiunge i valori all'interno della tabella
      * @param valore
-     * @return nulla poichè void
      */
     public void addValori(String valore){
         this.valori.add(valore);
@@ -64,7 +62,6 @@ public class Query {
 
     /**Funzione che aggiunge i valori all'interno della tabella
      * @param attributi
-     * @return nulla poichè void
      */
     public void addAttributo(String attributi){
         this.attributi.add(attributi);
