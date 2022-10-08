@@ -62,7 +62,7 @@ public class PaymentCardForm implements Form {
         num.setBounds(50, 130, 240, 30);
         scad.setBounds(50,190,240,30);
         cvv.setBounds(160,190,240,30);
-        pag.setBounds(50,40, 230, 30 );
+        pag.setBounds(50,55, 230, 30 );
 
         pagamento.setActionCommand("Private-Form-Payment");
         pagamento.addActionListener(PrivateConcreteHandler.getInstance());

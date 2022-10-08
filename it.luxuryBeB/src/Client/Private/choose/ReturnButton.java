@@ -19,7 +19,7 @@ public class ReturnButton implements Button {
      */
     @Override
     public void createButton() {
-        returnb.setBounds(10, 25, 100, 30);
+        returnb.setBounds(5, 25, 200, 30);
 
         returnb.setActionCommand("Private-Button-Back");
         returnb.addActionListener(PrivateConcreteHandler.getInstance());

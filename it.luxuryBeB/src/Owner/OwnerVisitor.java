@@ -231,9 +231,9 @@ public class OwnerVisitor implements Visitor {
 
                 modifica.setBounds( 650, 100+(50*i),150,30);
 
-                num.setBounds(300, 50+(50*i),100,30);
-                tip.setBounds(450, 50+(50*i),100,30);
-                sta.setBounds(600,50+(50*i),100,30);
+                num.setBounds(300, 100+(50*i),100,30);
+                tip.setBounds(450, 100+(50*i),100,30);
+                sta.setBounds(600,100+(50*i),100,30);
 
                 finestra.add(numero);
                 finestra.add(tipologia);
