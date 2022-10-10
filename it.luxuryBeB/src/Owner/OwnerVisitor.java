@@ -163,11 +163,11 @@ public class OwnerVisitor implements Visitor {
                 JLabel prz = new JLabel("Prezzo:");
                 JLabel sta = new JLabel("Stato:");
 
-                numero.setBounds(300, 100+(50*i),100,30);
-                tipologia.setBounds(450, 100+(50*i),100,30);
-                posti.setBounds(600,100+(50*i), 100, 30);
-                prezzo.setBounds(750, 100+(50*i), 100, 30);
-                stato.setBounds(900,100+(50*i),100,30);
+                numero.setBounds(300, 70+(50*i),100,30);
+                tipologia.setBounds(450, 70+(50*i),100,30);
+                posti.setBounds(600,70+(50*i), 100, 30);
+                prezzo.setBounds(750, 70+(50*i), 100, 30);
+                stato.setBounds(900,70+(50*i),100,30);
 
                 num.setBounds(300, 50+(50*i),100,30);
                 tip.setBounds(450, 50+(50*i),100,30);
@@ -225,15 +225,15 @@ public class OwnerVisitor implements Visitor {
                 JLabel tip = new JLabel("Tipologia camera:");
                 JLabel sta = new JLabel("Stato:");
 
-                numero.setBounds(300, 100+(50*i),100,30);
-                tipologia.setBounds(450, 100+(50*i),100,30);
-                stato.setBounds(600,100+(50*i),100,30);
+                numero.setBounds(300, 70+(50*i),100,30);
+                tipologia.setBounds(450, 70+(50*i),100,30);
+                stato.setBounds(600,70+(50*i),100,30);
 
-                modifica.setBounds( 650, 100+(50*i),150,30);
+                modifica.setBounds( 650, 60+(50*i),150,30);
 
-                num.setBounds(300, 100+(50*i),100,30);
-                tip.setBounds(450, 100+(50*i),100,30);
-                sta.setBounds(600,100+(50*i),100,30);
+                num.setBounds(300, 50+(50*i),100,30);
+                tip.setBounds(450, 50+(50*i),100,30);
+                sta.setBounds(600,50+(50*i),100,30);
 
                 finestra.add(numero);
                 finestra.add(tipologia);
